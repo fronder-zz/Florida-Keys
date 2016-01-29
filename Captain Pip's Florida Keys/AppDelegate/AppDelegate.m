@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FKLaunchViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,17 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [MBProgressHUD showHUDAddedTo:self.window animated:YES];
-    [FKRequestManager requestShopDetails:^(id response) {
-        NSLog(@"success: %@", response);
-        
-        
-        
-        [MBProgressHUD hideAllHUDsForView:self.window animated:YES];
-    } failure:^(id failure) {
-        NSLog(@"failure: %@", failure);
-        [MBProgressHUD hideAllHUDsForView:self.window animated:YES];
-    }];
+    [self loadSplashScreen];
     
     return YES;
 }
@@ -53,5 +44,26 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
+#pragma mark - Helper
+
+- (void)loadSplashScreen {
+    [FKRequestManager requestShopDetails:^(id response) {
+        NSLog(@"success: %@", response);
+        if (response[@"Result"]) {
+            NSString *imageName = [response[@"Shopdetails"] valueForKey:@"fld_splashimg"][0];
+            NSString *imageUrl = [NSString stringWithFormat:@"%@/%@",API_BASE_URL, imageName];
+            
+            FKLaunchViewController *launchVC = [[FKLaunchViewController alloc] initWithImageUrl:imageUrl];
+            [self.window setRootViewController:launchVC];
+        }
+    } failure:^(id failure) {
+        NSLog(@"failure: %@", failure);
+    }];
+}
+
+
 
 @end

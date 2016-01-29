@@ -37,5 +37,6 @@
 
     #import "AFURLSessionManager.h"
     #import "AFHTTPSessionManager.h"
+    #import "UIImageView+AFNetworking.h"
 
 #endif /* _AFNETWORKING_ */

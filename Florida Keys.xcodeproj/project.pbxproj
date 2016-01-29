@@ -14,6 +14,8 @@
 		041B61111C5BAE4900C6AB78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B61101C5BAE4900C6AB78 /* AppDelegate.m */; };
 		041B61151C5BAEE500C6AB78 /* FKSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B61141C5BAEE500C6AB78 /* FKSignInViewController.m */; };
 		044AE0531C5BD59D00493AFB /* FKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AE0521C5BD59D00493AFB /* FKManager.m */; };
+		044AE0571C5BE41400493AFB /* FKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AE0561C5BE41400493AFB /* FKLaunchViewController.m */; };
+		044AE05B1C5BE48400493AFB /* FKLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044AE05A1C5BE48400493AFB /* FKLaunchViewController.xib */; };
 		BB924BE99C12DDC653526E99 /* libPods-Captain Pip's Florida Keys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,9 @@
 		044AE04C1C5BB71300493AFB /* FloridaKeysPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloridaKeysPrefixHeader.pch; sourceTree = "<group>"; };
 		044AE0511C5BD59D00493AFB /* FKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKManager.h; sourceTree = "<group>"; };
 		044AE0521C5BD59D00493AFB /* FKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKManager.m; sourceTree = "<group>"; };
+		044AE0551C5BE41400493AFB /* FKLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLaunchViewController.h; sourceTree = "<group>"; };
+		044AE0561C5BE41400493AFB /* FKLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKLaunchViewController.m; sourceTree = "<group>"; };
+		044AE05A1C5BE48400493AFB /* FKLaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKLaunchViewController.xib; sourceTree = "<group>"; };
 		828F1E531EADAAC5B7958806 /* Pods-Captain Pip's Florida Keys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.debug.xcconfig"; sourceTree = "<group>"; };
 		A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Captain Pip's Florida Keys.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D179EF4432E6C7F97A2909 /* Pods-Captain Pip's Florida Keys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.release.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 		041B61071C5BA76400C6AB78 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				044AE0541C5BE3F600493AFB /* LaunchViewController */,
 				041B61121C5BAEB100C6AB78 /* SignInViewController */,
 			);
 			path = ViewController;
@@ -151,6 +157,16 @@
 				044AE0521C5BD59D00493AFB /* FKManager.m */,
 			);
 			path = FKManager;
+			sourceTree = "<group>";
+		};
+		044AE0541C5BE3F600493AFB /* LaunchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				044AE0551C5BE41400493AFB /* FKLaunchViewController.h */,
+				044AE0561C5BE41400493AFB /* FKLaunchViewController.m */,
+				044AE05A1C5BE48400493AFB /* FKLaunchViewController.xib */,
+			);
+			path = LaunchViewController;
 			sourceTree = "<group>";
 		};
 		9A3103D02EB8474D8AF5BEC5 /* Frameworks */ = {
@@ -233,6 +249,7 @@
 			files = (
 				041B60E41C5B9D2700C6AB78 /* LaunchScreen.storyboard in Resources */,
 				041B60E11C5B9D2700C6AB78 /* Assets.xcassets in Resources */,
+				044AE05B1C5BE48400493AFB /* FKLaunchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +310,7 @@
 			files = (
 				044AE0531C5BD59D00493AFB /* FKManager.m in Sources */,
 				041B610D1C5BADAE00C6AB78 /* FKRequestManager.m in Sources */,
+				044AE0571C5BE41400493AFB /* FKLaunchViewController.m in Sources */,
 				041B60D61C5B9D2700C6AB78 /* main.m in Sources */,
 				041B61111C5BAE4900C6AB78 /* AppDelegate.m in Sources */,
 				041B61151C5BAEE500C6AB78 /* FKSignInViewController.m in Sources */,
