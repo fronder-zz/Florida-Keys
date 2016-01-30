@@ -8,6 +8,6 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-@interface FKSignInViewController : AFURLSessionManager
+@interface FKSignInViewController : UIViewController
 
 @end

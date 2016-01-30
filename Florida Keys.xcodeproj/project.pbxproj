@@ -16,6 +16,11 @@
 		044AE0531C5BD59D00493AFB /* FKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AE0521C5BD59D00493AFB /* FKManager.m */; };
 		044AE0571C5BE41400493AFB /* FKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AE0561C5BE41400493AFB /* FKLaunchViewController.m */; };
 		044AE05B1C5BE48400493AFB /* FKLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044AE05A1C5BE48400493AFB /* FKLaunchViewController.xib */; };
+		044AE0601C5BF2FB00493AFB /* FKCouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AE05E1C5BF2FB00493AFB /* FKCouponViewController.m */; };
+		044AE0611C5BF2FB00493AFB /* FKCouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044AE05F1C5BF2FB00493AFB /* FKCouponViewController.xib */; };
+		044AE0631C5BFC4000493AFB /* FKSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044AE0621C5BFC4000493AFB /* FKSignInViewController.xib */; };
+		04E629191C5CDED000CD9C97 /* NSString+FKString.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E629181C5CDED000CD9C97 /* NSString+FKString.m */; };
+		04E6291C1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6291B1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m */; };
 		BB924BE99C12DDC653526E99 /* libPods-Captain Pip's Florida Keys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */; };
 /* End PBXBuildFile section */
 
@@ -31,13 +36,21 @@
 		041B61101C5BAE4900C6AB78 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		041B61131C5BAEE500C6AB78 /* FKSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSignInViewController.h; sourceTree = "<group>"; };
 		041B61141C5BAEE500C6AB78 /* FKSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSignInViewController.m; sourceTree = "<group>"; };
-		041B61161C5BB00400C6AB78 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		041B61161C5BB00400C6AB78 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Globals.h; path = "../Captain Pip's Florida Keys/Globals.h"; sourceTree = "<group>"; };
 		044AE04C1C5BB71300493AFB /* FloridaKeysPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloridaKeysPrefixHeader.pch; sourceTree = "<group>"; };
 		044AE0511C5BD59D00493AFB /* FKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKManager.h; sourceTree = "<group>"; };
 		044AE0521C5BD59D00493AFB /* FKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKManager.m; sourceTree = "<group>"; };
 		044AE0551C5BE41400493AFB /* FKLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLaunchViewController.h; sourceTree = "<group>"; };
 		044AE0561C5BE41400493AFB /* FKLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKLaunchViewController.m; sourceTree = "<group>"; };
 		044AE05A1C5BE48400493AFB /* FKLaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKLaunchViewController.xib; sourceTree = "<group>"; };
+		044AE05D1C5BF2FB00493AFB /* FKCouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKCouponViewController.h; sourceTree = "<group>"; };
+		044AE05E1C5BF2FB00493AFB /* FKCouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKCouponViewController.m; sourceTree = "<group>"; };
+		044AE05F1C5BF2FB00493AFB /* FKCouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKCouponViewController.xib; sourceTree = "<group>"; };
+		044AE0621C5BFC4000493AFB /* FKSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKSignInViewController.xib; sourceTree = "<group>"; };
+		04E629171C5CDED000CD9C97 /* NSString+FKString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FKString.h"; sourceTree = "<group>"; };
+		04E629181C5CDED000CD9C97 /* NSString+FKString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FKString.m"; sourceTree = "<group>"; };
+		04E6291A1C5CF22100CD9C97 /* NSDictionary+FKDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FKDictionary.h"; sourceTree = "<group>"; };
+		04E6291B1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FKDictionary.m"; sourceTree = "<group>"; };
 		828F1E531EADAAC5B7958806 /* Pods-Captain Pip's Florida Keys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.debug.xcconfig"; sourceTree = "<group>"; };
 		A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Captain Pip's Florida Keys.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D179EF4432E6C7F97A2909 /* Pods-Captain Pip's Florida Keys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.release.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				041B60D51C5B9D2700C6AB78 /* main.m */,
-				041B61161C5BB00400C6AB78 /* Globals.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -101,6 +113,7 @@
 		041B61071C5BA76400C6AB78 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				044AE05C1C5BF2DD00493AFB /* CouponViewController */,
 				044AE0541C5BE3F600493AFB /* LaunchViewController */,
 				041B61121C5BAEB100C6AB78 /* SignInViewController */,
 			);
@@ -110,6 +123,7 @@
 		041B61091C5BAB8200C6AB78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04E629161C5CDEAE00CD9C97 /* Categories */,
 				044AE0501C5BD59D00493AFB /* FKManager */,
 				041B610B1C5BADAE00C6AB78 /* FKRequestManager.h */,
 				041B610C1C5BADAE00C6AB78 /* FKRequestManager.m */,
@@ -138,6 +152,7 @@
 			children = (
 				041B61131C5BAEE500C6AB78 /* FKSignInViewController.h */,
 				041B61141C5BAEE500C6AB78 /* FKSignInViewController.m */,
+				044AE0621C5BFC4000493AFB /* FKSignInViewController.xib */,
 			);
 			path = SignInViewController;
 			sourceTree = "<group>";
@@ -145,6 +160,7 @@
 		044AE04B1C5BB71300493AFB /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				041B61161C5BB00400C6AB78 /* Globals.h */,
 				044AE04C1C5BB71300493AFB /* FloridaKeysPrefixHeader.pch */,
 			);
 			path = Support;
@@ -167,6 +183,27 @@
 				044AE05A1C5BE48400493AFB /* FKLaunchViewController.xib */,
 			);
 			path = LaunchViewController;
+			sourceTree = "<group>";
+		};
+		044AE05C1C5BF2DD00493AFB /* CouponViewController */ = {
+			isa = PBXGroup;
+			children = (
+				044AE05D1C5BF2FB00493AFB /* FKCouponViewController.h */,
+				044AE05E1C5BF2FB00493AFB /* FKCouponViewController.m */,
+				044AE05F1C5BF2FB00493AFB /* FKCouponViewController.xib */,
+			);
+			path = CouponViewController;
+			sourceTree = "<group>";
+		};
+		04E629161C5CDEAE00CD9C97 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				04E629171C5CDED000CD9C97 /* NSString+FKString.h */,
+				04E629181C5CDED000CD9C97 /* NSString+FKString.m */,
+				04E6291A1C5CF22100CD9C97 /* NSDictionary+FKDictionary.h */,
+				04E6291B1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		9A3103D02EB8474D8AF5BEC5 /* Frameworks */ = {
@@ -249,7 +286,9 @@
 			files = (
 				041B60E41C5B9D2700C6AB78 /* LaunchScreen.storyboard in Resources */,
 				041B60E11C5B9D2700C6AB78 /* Assets.xcassets in Resources */,
+				044AE0631C5BFC4000493AFB /* FKSignInViewController.xib in Resources */,
 				044AE05B1C5BE48400493AFB /* FKLaunchViewController.xib in Resources */,
+				044AE0611C5BF2FB00493AFB /* FKCouponViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				044AE0531C5BD59D00493AFB /* FKManager.m in Sources */,
+				04E629191C5CDED000CD9C97 /* NSString+FKString.m in Sources */,
 				041B610D1C5BADAE00C6AB78 /* FKRequestManager.m in Sources */,
+				044AE0601C5BF2FB00493AFB /* FKCouponViewController.m in Sources */,
+				04E6291C1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m in Sources */,
 				044AE0571C5BE41400493AFB /* FKLaunchViewController.m in Sources */,
 				041B60D61C5B9D2700C6AB78 /* main.m in Sources */,
 				041B61111C5BAE4900C6AB78 /* AppDelegate.m in Sources */,
@@ -419,6 +461,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = Support/FloridaKeysPrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"CAPTAIN_PIPS_FLORIDA_KEYS=1",
+				);
 				INFOPLIST_FILE = "Captain Pip's Florida Keys/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digitalarrowtech.Captain-Pip-s-Florida-Keys";
@@ -433,6 +480,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = Support/FloridaKeysPrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"CAPTAIN_PIPS_FLORIDA_KEYS=1",
+				);
 				INFOPLIST_FILE = "Captain Pip's Florida Keys/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digitalarrowtech.Captain-Pip-s-Florida-Keys";

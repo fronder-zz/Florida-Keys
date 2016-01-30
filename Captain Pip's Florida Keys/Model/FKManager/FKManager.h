@@ -10,6 +10,10 @@
 
 @interface FKManager : NSObject
 
+@property (nonatomic, assign, getter=isReachable) BOOL reachable;
 
++ (instancetype)sharedManager;
++ (UINavigationController *)navigationControllerWithVC:(UIViewController *)vc;
++ (void)alertWithText:(NSString *)text inView:(UIView *)view;
 
 @end

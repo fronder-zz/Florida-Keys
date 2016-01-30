@@ -8,8 +8,13 @@
 
 #import "AppDelegate.h"
 #import "FKLaunchViewController.h"
+#import "FKCouponViewController.h"
+#import "FKSignInViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () {
+    NSString *_deviceTokenStr;
+    BOOL _userSigned;
+}
 
 @end
 
@@ -17,6 +22,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [FKRequestManager sharedManager];
+    [self addNotificationObservers];
     
     [self loadSplashScreen];
     
@@ -26,6 +33,34 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+}
+
+#ifdef __IPHONE_8_0
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    
+}
+#endif
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    _deviceTokenStr =[NSString stringWithFormat:@"%@",deviceToken];
+    NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@"< >"];
+    _deviceTokenStr = [[_deviceTokenStr componentsSeparatedByCharactersInSet:doNotWant] componentsJoinedByString:@""];
+    
+    NSLog(@"My token is: %@",  _deviceTokenStr);
+    NSUserDefaults *userValue = [NSUserDefaults standardUserDefaults];
+    [userValue setObject:_deviceTokenStr forKey:@"DEVICE_TOKEN"];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -46,24 +81,72 @@
 }
 
 
-
 #pragma mark - Helper
 
+- (void)addNotificationObservers {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(internetConnectionStatusDidChange:) name:kInternetConnectionDidChangeNotification object:nil];
+}
+
+- (void)internetConnectionStatusDidChange:(NSNotification *)notification {
+    if ([notification.object boolValue] == YES) {
+        NSLog(@"Reachable");
+        if (!_userSigned) {
+            [self loadSplashScreen];
+        }
+    }
+}
+
 - (void)loadSplashScreen {
+    if (![FKManager sharedManager].isReachable) {
+        _userSigned = NO;
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please check your internet connection" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];return;
+    }
     [FKRequestManager requestShopDetails:^(id response) {
+        _userSigned = YES;
         NSLog(@"success: %@", response);
-        if (response[@"Result"]) {
+        if ([response[@"Result"] isEqualToString:@"Success"]) {
             NSString *imageName = [response[@"Shopdetails"] valueForKey:@"fld_splashimg"][0];
             NSString *imageUrl = [NSString stringWithFormat:@"%@/%@",API_BASE_URL, imageName];
             
             FKLaunchViewController *launchVC = [[FKLaunchViewController alloc] initWithImageUrl:imageUrl];
             [self.window setRootViewController:launchVC];
+            
+            [self signIn];
         }
     } failure:^(id failure) {
         NSLog(@"failure: %@", failure);
     }];
 }
 
+- (void)signIn {
+    NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_ID];
+    if (userID) {
+        FKCouponViewController *couponVC = [[FKCouponViewController alloc] init];
+        [self.window setRootViewController:[FKManager navigationControllerWithVC:couponVC]];
+    }
+    else {
+        if (![FKManager sharedManager].isReachable) {
+            [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please check your internet connection" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];return;
+        }
+        NSString *deviceId = [UIDevice currentDevice].identifierForVendor.UUIDString;
+        NSLog(@"Device id %@", deviceId);
+        
+        NSString *urlString =[NSString stringWithFormat:@"%@%@/%@/%@/%@/2", API_COMMON_URL, METHOD_CHECK_DEVICE, deviceId, _deviceTokenStr, SHOP_ID];
+        
+        [FKRequestManager requestCheckDeviceWithURLString:urlString withBlock:^(id response) {
+            NSLog(@"success: %@", response);
+            if ([response[@"Result"] isEqualToString:@"Success"]) {
+                
+            }
+            else {
+                FKSignInViewController *signInVC = [[FKSignInViewController alloc] init];
+                [self.window setRootViewController:signInVC];
+            }
+        } failure:^(id failure) {
+            NSLog(@"failure: %@", failure);
+        }];
+    }
+}
 
 
 @end

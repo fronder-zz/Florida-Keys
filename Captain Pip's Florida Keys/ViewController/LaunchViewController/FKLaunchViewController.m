@@ -18,6 +18,8 @@
 
 @implementation FKLaunchViewController
 
+#pragma mark - Lyfecycle
+
 - (instancetype)initWithImageUrl:(NSString *)imageURL {
     self = [self init];
     if (self) {
@@ -37,4 +39,8 @@
 }
 
 
+
 @end
+
+
+
