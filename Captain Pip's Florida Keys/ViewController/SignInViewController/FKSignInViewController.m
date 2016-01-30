@@ -64,9 +64,8 @@
                 
                 [defaults synchronize];
                 
-                FKCouponViewController *couponVC = [[FKCouponViewController alloc] init];
                 AppDelegate *appDelegate = APP_DELEGATE;
-                [appDelegate.window setRootViewController:couponVC];
+                [appDelegate.window setRootViewController:[[FKManager navigationControllerWithVC:[FKCouponViewController alloc]] init]];
             }
             
             [MBProgressHUD hideAllHUDsForView:[self view] animated:YES];

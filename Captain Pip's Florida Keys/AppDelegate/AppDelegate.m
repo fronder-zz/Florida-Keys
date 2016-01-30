@@ -101,6 +101,7 @@
         _userSigned = NO;
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please check your internet connection" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];return;
     }
+    _userSigned = YES;
     [FKRequestManager requestShopDetails:^(id response) {
         _userSigned = YES;
         NSLog(@"success: %@", response);
@@ -121,22 +122,23 @@
 - (void)signIn {
     NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_ID];
     if (userID) {
-        FKCouponViewController *couponVC = [[FKCouponViewController alloc] init];
-        [self.window setRootViewController:[FKManager navigationControllerWithVC:couponVC]];
+        [self.window setRootViewController:[FKManager navigationControllerWithVC:[[FKCouponViewController alloc] init]]];
     }
     else {
         if (![FKManager sharedManager].isReachable) {
             [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please check your internet connection" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];return;
         }
         NSString *deviceId = [UIDevice currentDevice].identifierForVendor.UUIDString;
-        NSLog(@"Device id %@", deviceId);
         
         NSString *urlString =[NSString stringWithFormat:@"%@%@/%@/%@/%@/2", API_COMMON_URL, METHOD_CHECK_DEVICE, deviceId, _deviceTokenStr, SHOP_ID];
         
         [FKRequestManager requestCheckDeviceWithURLString:urlString withBlock:^(id response) {
             NSLog(@"success: %@", response);
             if ([response[@"Result"] isEqualToString:@"Success"]) {
+                [[NSUserDefaults standardUserDefaults] setObject:[response[@"Shopdetails"] valueForKey:KEY_USER_ID][0] forKey:KEY_USER_ID];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 
+                [self.window setRootViewController:[FKManager navigationControllerWithVC:[[FKCouponViewController alloc] init]]];
             }
             else {
                 FKSignInViewController *signInVC = [[FKSignInViewController alloc] init];
