@@ -8,9 +8,13 @@
 
 #import "FKSignInViewController.h"
 #import "FKCouponViewController.h"
+#import "FKCouponTableViewController.h"
+#import "FKPunchViewController.h"
 #import "AppDelegate.h"
 
-@interface FKSignInViewController ()
+@interface FKSignInViewController () <FKTabBarControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayout;
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 @property (weak, nonatomic) IBOutlet UITextField *emailTF;
@@ -29,6 +33,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 
@@ -57,15 +86,20 @@
         
         [FKRequestManager requestAddUserWithParameters:parameters withBlock:^(id response) {
             if ([response[@"Result"] isEqualToString:@"Success"]) {
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                [defaults setObject:parameters[KEY_USER_ID] forKey:KEY_USER_ID];
-                [defaults setObject:parameters[KEY_USERNAME] forKey:KEY_USERNAME];
-                [defaults setObject:parameters[KEY_EMAIL] forKey:KEY_EMAIL];
-                
-                [defaults synchronize];
-                
-                AppDelegate *appDelegate = APP_DELEGATE;
-                [appDelegate.window setRootViewController:[[FKManager navigationControllerWithVC:[FKCouponViewController alloc]] init]];
+                if ([response[@"UserDetails"] isKindOfClass:[NSString class]] && [response[@"UserDetails"] isEqualToString:@"Email Already exists"]) {
+                    [[[UIAlertView alloc] initWithTitle:SHOP_NAME message:@"Email already exists" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                } else {
+                    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                    [defaults setObject:response[KEY_USER_ID] forKey:KEY_USER_ID];
+                    [defaults setObject:response[KEY_USERNAME] forKey:KEY_USERNAME];
+                    [defaults setObject:response[KEY_EMAIL] forKey:KEY_EMAIL];
+                    
+                    [defaults synchronize];
+                    
+                    [self gotoCouponViewController];
+                }
+            } else {
+                [[[UIAlertView alloc] initWithTitle:SHOP_NAME message:@"Unable to Sign in" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
             }
             
             [MBProgressHUD hideAllHUDsForView:[self view] animated:YES];
@@ -80,6 +114,45 @@
     }
 }
 
+- (void)gotoCouponViewController {
+    FKCouponTableViewController *couponTableViewVC = [[FKCouponTableViewController alloc] init]; //WithFrame:self.bodyView.frame];
+    couponTableViewVC.title = @"Coupon";
+    FKPunchViewController *punchVC = [[FKPunchViewController alloc] init]; //WithFrame:self.bodyView.frame];
+    punchVC.title = @"Punch";
+    
+    NSArray *viewControllers = @[couponTableViewVC, punchVC];
+    
+    AppDelegate *appDelegate = APP_DELEGATE;
+    
+    FKCouponViewController *couponVC = [[FKCouponViewController alloc] init];
+    [couponVC setViewControllers:viewControllers];
+    
+    [appDelegate.window setRootViewController:couponVC];
+}
+
+- (void)keyboardWillShow {
+    if (self.topLayout.constant > 0) {
+        [UIView animateWithDuration:3.0 animations:^{
+            self.topLayout.constant -= 80;
+        }];
+    }
+}
+
+- (void)keyboardWillHide {
+    if (self.topLayout.constant < 0) {
+        [UIView animateWithDuration:3.0 animations:^{
+            self.topLayout.constant += 80;
+        }];
+    }
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 

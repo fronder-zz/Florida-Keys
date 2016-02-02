@@ -10,8 +10,10 @@
 #import "FKLaunchViewController.h"
 #import "FKCouponViewController.h"
 #import "FKSignInViewController.h"
+#import "FKCouponTableViewController.h"
+#import "FKPunchViewController.h"
 
-@interface AppDelegate () {
+@interface AppDelegate () <FKTabBarControllerDelegate> {
     NSString *_deviceTokenStr;
     BOOL _userSigned;
 }
@@ -120,9 +122,10 @@
 }
 
 - (void)signIn {
+//    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:KEY_USER_ID];
     NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_ID];
     if (userID) {
-        [self.window setRootViewController:[FKManager navigationControllerWithVC:[[FKCouponViewController alloc] init]]];
+        [self gotoCouponViewController];
     }
     else {
         if (![FKManager sharedManager].isReachable) {
@@ -138,17 +141,31 @@
                 [[NSUserDefaults standardUserDefaults] setObject:[response[@"Shopdetails"] valueForKey:KEY_USER_ID][0] forKey:KEY_USER_ID];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 
-                [self.window setRootViewController:[FKManager navigationControllerWithVC:[[FKCouponViewController alloc] init]]];
+                [self gotoCouponViewController];
             }
             else {
-                FKSignInViewController *signInVC = [[FKSignInViewController alloc] init];
-                [self.window setRootViewController:signInVC];
+                [self.window setRootViewController:[[FKSignInViewController alloc] init]];
             }
         } failure:^(id failure) {
             NSLog(@"failure: %@", failure);
         }];
     }
 }
+
+- (void)gotoCouponViewController {
+    FKCouponTableViewController *couponTableViewVC = [[FKCouponTableViewController alloc] init]; //WithFrame:self.bodyView.frame];
+    couponTableViewVC.title = @"Coupon";
+    FKPunchViewController *punchVC = [[FKPunchViewController alloc] init]; //WithFrame:self.bodyView.frame];
+    punchVC.title = @"Punch";
+    
+    NSArray *viewControllers = @[couponTableViewVC, punchVC];
+    
+    FKCouponViewController *couponVC = [[FKCouponViewController alloc] init];
+    [couponVC setViewControllers:viewControllers];
+    
+    [self.window setRootViewController:couponVC];
+}
+
 
 
 @end

@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FKSignInViewController">
             <connections>
                 <outlet property="emailTF" destination="e9x-53-0D3" id="jZM-a8-z1w"/>
+                <outlet property="topLayout" destination="w8x-co-eX5" id="ao7-5n-G4l"/>
                 <outlet property="usernameTF" destination="lFB-8A-xnB" id="g7l-EO-H5o"/>
                 <outlet property="view" destination="iN0-l3-epB" id="QOO-Nb-5Ka"/>
             </connections>
@@ -17,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow your favorite places to email you even better deals and crazy Keys info!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-MG-7Ry">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow your favorite places to email you even better deals and crazy Keys info!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-MG-7Ry">
                     <rect key="frame" x="8" y="30" width="584" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="cd0-Q5-H2Y"/>
@@ -39,7 +40,7 @@
                         <rect key="frame" x="8" y="30" width="384" height="75"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;You will have ALLOW and NOT ALLOW options for each business!&quot;" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QQ-9f-ZSh">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;You will have ALLOW and NOT ALLOW options for each business!&quot;" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QQ-9f-ZSh">
                     <rect key="frame" x="8" y="130" width="584" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="Tiq-FD-UbQ"/>
@@ -61,7 +62,7 @@
                         <rect key="frame" x="8" y="105" width="384" height="75"/>
                     </variation>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIRST NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-8W-P7Z">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-8W-P7Z">
                     <rect key="frame" x="245" y="236" width="111" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="dCH-Ce-Fpg"/>
@@ -86,7 +87,7 @@
                         <rect key="frame" x="149" y="236" width="111" height="21"/>
                     </variation>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alertred" translatesAutoresizingMaskIntoConstraints="NO" id="Vpq-f3-alV">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertred" translatesAutoresizingMaskIntoConstraints="NO" id="Vpq-f3-alV">
                     <rect key="frame" x="242" y="237" width="10" height="10"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="brH-9Z-NGc"/>
@@ -108,7 +109,7 @@
                         <rect key="frame" x="146" y="237" width="10" height="10"/>
                     </variation>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFB-8A-xnB">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFB-8A-xnB">
                     <rect key="frame" x="160" y="257" width="280" height="34"/>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -137,7 +138,7 @@
                         <outlet property="delegate" destination="-1" id="5t1-QQ-tRF"/>
                     </connections>
                 </textField>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EMAIL (optional)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teI-0J-8M8">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL (optional)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teI-0J-8M8">
                     <rect key="frame" x="160" y="299" width="280" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="7Qs-VL-iar"/>
@@ -162,7 +163,7 @@
                         <rect key="frame" x="64" y="299" width="280" height="21"/>
                     </variation>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9x-53-0D3">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9x-53-0D3">
                     <rect key="frame" x="160" y="323" width="280" height="34"/>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -191,7 +192,7 @@
                         <outlet property="delegate" destination="-1" id="4pV-fz-Abk"/>
                     </connections>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="enter-1" translatesAutoresizingMaskIntoConstraints="NO" id="t2l-OJ-aZV">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enter-1" translatesAutoresizingMaskIntoConstraints="NO" id="t2l-OJ-aZV">
                     <rect key="frame" x="275" y="369" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="5y8-Xl-elQ"/>
@@ -213,7 +214,7 @@
                         <rect key="frame" x="179" y="369" width="50" height="20"/>
                     </variation>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-9i-9vW">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-9i-9vW">
                     <rect key="frame" x="160" y="358" width="280" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="7dD-eI-Wxu"/>
@@ -242,7 +243,7 @@
                         <action selector="enterButtonClicked:" destination="-1" eventType="touchUpInside" id="Rid-k3-I8w"/>
                     </connections>
                 </button>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7-20.png" translatesAutoresizingMaskIntoConstraints="NO" id="jwX-R3-CNX">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7-20.png" translatesAutoresizingMaskIntoConstraints="NO" id="jwX-R3-CNX">
                     <rect key="frame" x="415" y="264" width="19" height="19"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="315" y="249" width="19" height="19"/>

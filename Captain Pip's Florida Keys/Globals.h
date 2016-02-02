@@ -9,6 +9,24 @@
 #ifndef Globals_h
 #define Globals_h
 
+// System
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_5_OR_LESS (IS_IPHONE_5 || IS_IPHONE_4_OR_LESS)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 // API
 #define API_BASE_URL            @"http://www.milemarkercoupons.com"
 #define API_COMMON_URL          @"http://www.milemarkercoupons.com/api/shop.php/service"
@@ -38,7 +56,7 @@
 #define APP_DELEGATE            (AppDelegate *)[UIApplication sharedApplication].delegate
 #define ALERT(text, view)       [FKManager alertWithText:text inView:view]
 #define DEVICE_ID               [UIDevice currentDevice].identifierForVendor.UUIDString
-
+#define IMAGE(image)            [UIImage imageNamed:image]
 
 static NSString * const kInternetConnectionDidChangeNotification = @"InternetConnectionDidChangeNotification";
 
