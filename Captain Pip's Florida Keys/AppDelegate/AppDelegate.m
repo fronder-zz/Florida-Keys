@@ -12,6 +12,7 @@
 #import "FKSignInViewController.h"
 #import "FKCouponTableViewController.h"
 #import "FKPunchViewController.h"
+#import "FKCouponDetailsViewController.h"
 
 @interface AppDelegate () <FKTabBarControllerDelegate> {
     NSString *_deviceTokenStr;
@@ -133,7 +134,7 @@
         }
         NSString *deviceId = [UIDevice currentDevice].identifierForVendor.UUIDString;
         
-        NSString *urlString =[NSString stringWithFormat:@"%@%@/%@/%@/%@/2", API_COMMON_URL, METHOD_CHECK_DEVICE, deviceId, _deviceTokenStr, SHOP_ID];
+        NSString *urlString =[NSString stringWithFormat:@"%@%@/%@/%@/%@/2", API_COMMON_URL, METHOD_CHECK_DEVICE, deviceId, _deviceTokenStr, BASE_SHOP_ID];
         
         [FKRequestManager requestCheckDeviceWithURLString:urlString withBlock:^(id response) {
             NSLog(@"success: %@", response);
@@ -153,12 +154,15 @@
 }
 
 - (void)gotoCouponViewController {
-    FKCouponTableViewController *couponTableViewVC = [[FKCouponTableViewController alloc] init]; //WithFrame:self.bodyView.frame];
+    FKCouponTableViewController *couponTableViewVC = [[FKCouponTableViewController alloc] init];
     couponTableViewVC.title = @"Coupon";
-    FKPunchViewController *punchVC = [[FKPunchViewController alloc] init]; //WithFrame:self.bodyView.frame];
+    
+    FKPunchViewController *punchVC = [[FKPunchViewController alloc] init];
     punchVC.title = @"Punch";
     
-    NSArray *viewControllers = @[couponTableViewVC, punchVC];
+    FKCouponDetailsViewController *detailsVC = [[FKCouponDetailsViewController alloc] init];
+    
+    NSArray *viewControllers = @[couponTableViewVC, punchVC, detailsVC];
     
     FKCouponViewController *couponVC = [[FKCouponViewController alloc] init];
     [couponVC setViewControllers:viewControllers];

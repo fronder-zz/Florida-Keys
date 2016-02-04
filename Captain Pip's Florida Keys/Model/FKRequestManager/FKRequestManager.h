@@ -21,4 +21,10 @@
 // Method for registering user to the server
 + (void)requestAddUserWithParameters:(id)parameters withBlock:(void(^)(id response))success failure:(void(^)(id failure))failure;
 
+// Get number of shops available at the moment
++ (void)requestNumberOfShops:(void(^)(id response))success failure:(void(^)(id failure))failure;
+
+// Get available shops data
++ (void)requestAvailableShops:(void(^)(id response))success failure:(void(^)(id failure))failure;
+
 @end

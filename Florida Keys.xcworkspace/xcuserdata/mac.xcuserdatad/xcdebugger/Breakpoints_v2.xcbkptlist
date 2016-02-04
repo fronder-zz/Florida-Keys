@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Captain Pip&apos;s Florida Keys/ViewController/CouponViewController/FKCouponViewController.m"
-            timestampString = "475997143.517557"
+            filePath = "Captain Pip&apos;s Florida Keys/ViewController/CouponTableViewController/FKCouponTableViewController.m"
+            timestampString = "476296564.387926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-viewWillLayoutSubviews"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,46 +67,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Captain Pip&apos;s Florida Keys/ViewController/CouponViewController/FKCouponViewController.m"
-            timestampString = "475999102.307959"
+            filePath = "Captain Pip&apos;s Florida Keys/ViewController/MHTabBarController/MHTabBarController.m"
+            timestampString = "476219057.380783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-addTabButtons"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "-tabButtonPressed:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[FKCouponViewController addTabButtons]"
-                  moduleName = "Captain Pip&apos;s Florida Keys"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/FloridaKeys/Captain%20Pip&apos;s%20Florida%20Keys/ViewController/CouponViewController/FKCouponViewController.m"
-                  timestampString = "475999077.89399"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "66">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[FKCouponViewController addTabButtons]"
-                  moduleName = "Captain Pip&apos;s Florida Keys"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/FloridaKeys/Captain%20Pip&apos;s%20Florida%20Keys/ViewController/CouponViewController/FKCouponViewController.m"
-                  timestampString = "475999077.894524"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

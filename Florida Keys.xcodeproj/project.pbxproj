@@ -10,7 +10,6 @@
 		041B60D61C5B9D2700C6AB78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B60D51C5B9D2700C6AB78 /* main.m */; };
 		041B60E11C5B9D2700C6AB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041B60E01C5B9D2700C6AB78 /* Assets.xcassets */; };
 		041B60E41C5B9D2700C6AB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041B60E21C5B9D2700C6AB78 /* LaunchScreen.storyboard */; };
-		041B610D1C5BADAE00C6AB78 /* FKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B610C1C5BADAE00C6AB78 /* FKRequestManager.m */; };
 		041B61111C5BAE4900C6AB78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B61101C5BAE4900C6AB78 /* AppDelegate.m */; };
 		041B61151C5BAEE500C6AB78 /* FKSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B61141C5BAEE500C6AB78 /* FKSignInViewController.m */; };
 		044AE0531C5BD59D00493AFB /* FKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AE0521C5BD59D00493AFB /* FKManager.m */; };
@@ -19,13 +18,21 @@
 		044AE0601C5BF2FB00493AFB /* FKCouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044AE05E1C5BF2FB00493AFB /* FKCouponViewController.m */; };
 		044AE0611C5BF2FB00493AFB /* FKCouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044AE05F1C5BF2FB00493AFB /* FKCouponViewController.xib */; };
 		044AE0631C5BFC4000493AFB /* FKSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044AE0621C5BFC4000493AFB /* FKSignInViewController.xib */; };
+		0493076F1C60FC1E007F5BAD /* FKCouponTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493076D1C60FC1E007F5BAD /* FKCouponTableViewCell.m */; };
+		049307701C60FC1E007F5BAD /* FKCouponTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0493076E1C60FC1E007F5BAD /* FKCouponTableViewCell.xib */; };
+		049307731C610236007F5BAD /* UIFont+FKFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 049307721C610236007F5BAD /* UIFont+FKFont.m */; };
+		049307771C610568007F5BAD /* FKCouponTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049307761C610568007F5BAD /* FKCouponTableViewController.xib */; };
+		0493077E1C613600007F5BAD /* FKCouponObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493077D1C613600007F5BAD /* FKCouponObject.m */; };
+		049307821C613620007F5BAD /* FKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049307811C613620007F5BAD /* FKRequestManager.m */; };
+		0493078C1C6283CA007F5BAD /* FKCouponDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493078A1C6283CA007F5BAD /* FKCouponDetailsViewController.m */; };
+		0493078D1C6283CA007F5BAD /* FKCouponDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0493078B1C6283CA007F5BAD /* FKCouponDetailsViewController.xib */; };
+		049307911C6292A5007F5BAD /* FKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049307901C6292A5007F5BAD /* FKBaseViewController.m */; };
 		04E629191C5CDED000CD9C97 /* NSString+FKString.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E629181C5CDED000CD9C97 /* NSString+FKString.m */; };
 		04E6291C1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6291B1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m */; };
-		04E629291C5E7D4000CD9C97 /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E629281C5E7D4000CD9C97 /* MHTabBarController.m */; };
 		04E6292E1C5E7E8E00CD9C97 /* FKCouponTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E6292C1C5E7E8E00CD9C97 /* FKCouponTableViewController.m */; };
-		04E6292F1C5E7E8E00CD9C97 /* FKCouponTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E6292D1C5E7E8E00CD9C97 /* FKCouponTableViewController.xib */; };
 		04E6293A1C5E7FEC00CD9C97 /* FKPunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E629381C5E7FEC00CD9C97 /* FKPunchViewController.m */; };
 		04E6293B1C5E7FEC00CD9C97 /* FKPunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E629391C5E7FEC00CD9C97 /* FKPunchViewController.xib */; };
+		04E70FC31C63943400A0685E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E70FC21C63943400A0685E /* MapKit.framework */; };
 		BB924BE99C12DDC653526E99 /* libPods-Captain Pip's Florida Keys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +42,6 @@
 		041B60E01C5B9D2700C6AB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041B60E31C5B9D2700C6AB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041B60E51C5B9D2700C6AB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		041B610B1C5BADAE00C6AB78 /* FKRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKRequestManager.h; sourceTree = "<group>"; };
-		041B610C1C5BADAE00C6AB78 /* FKRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKRequestManager.m; sourceTree = "<group>"; };
 		041B610F1C5BAE4900C6AB78 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		041B61101C5BAE4900C6AB78 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		041B61131C5BAEE500C6AB78 /* FKSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSignInViewController.h; sourceTree = "<group>"; };
@@ -52,18 +57,31 @@
 		044AE05E1C5BF2FB00493AFB /* FKCouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKCouponViewController.m; sourceTree = "<group>"; };
 		044AE05F1C5BF2FB00493AFB /* FKCouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKCouponViewController.xib; sourceTree = "<group>"; };
 		044AE0621C5BFC4000493AFB /* FKSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKSignInViewController.xib; sourceTree = "<group>"; };
+		0493076C1C60FC1E007F5BAD /* FKCouponTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKCouponTableViewCell.h; sourceTree = "<group>"; };
+		0493076D1C60FC1E007F5BAD /* FKCouponTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKCouponTableViewCell.m; sourceTree = "<group>"; };
+		0493076E1C60FC1E007F5BAD /* FKCouponTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKCouponTableViewCell.xib; sourceTree = "<group>"; };
+		049307711C610236007F5BAD /* UIFont+FKFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FKFont.h"; sourceTree = "<group>"; };
+		049307721C610236007F5BAD /* UIFont+FKFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FKFont.m"; sourceTree = "<group>"; };
+		049307761C610568007F5BAD /* FKCouponTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKCouponTableViewController.xib; sourceTree = "<group>"; };
+		0493077C1C613600007F5BAD /* FKCouponObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKCouponObject.h; sourceTree = "<group>"; };
+		0493077D1C613600007F5BAD /* FKCouponObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKCouponObject.m; sourceTree = "<group>"; };
+		049307801C613620007F5BAD /* FKRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKRequestManager.h; sourceTree = "<group>"; };
+		049307811C613620007F5BAD /* FKRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKRequestManager.m; sourceTree = "<group>"; };
+		049307891C6283CA007F5BAD /* FKCouponDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKCouponDetailsViewController.h; sourceTree = "<group>"; };
+		0493078A1C6283CA007F5BAD /* FKCouponDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKCouponDetailsViewController.m; sourceTree = "<group>"; };
+		0493078B1C6283CA007F5BAD /* FKCouponDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKCouponDetailsViewController.xib; sourceTree = "<group>"; };
+		0493078F1C6292A5007F5BAD /* FKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseViewController.h; sourceTree = "<group>"; };
+		049307901C6292A5007F5BAD /* FKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseViewController.m; sourceTree = "<group>"; };
 		04E629171C5CDED000CD9C97 /* NSString+FKString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FKString.h"; sourceTree = "<group>"; };
 		04E629181C5CDED000CD9C97 /* NSString+FKString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FKString.m"; sourceTree = "<group>"; };
 		04E6291A1C5CF22100CD9C97 /* NSDictionary+FKDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FKDictionary.h"; sourceTree = "<group>"; };
 		04E6291B1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FKDictionary.m"; sourceTree = "<group>"; };
-		04E629271C5E7D4000CD9C97 /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBarController.h; sourceTree = "<group>"; };
-		04E629281C5E7D4000CD9C97 /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTabBarController.m; sourceTree = "<group>"; };
 		04E6292B1C5E7E8E00CD9C97 /* FKCouponTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKCouponTableViewController.h; sourceTree = "<group>"; };
 		04E6292C1C5E7E8E00CD9C97 /* FKCouponTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKCouponTableViewController.m; sourceTree = "<group>"; };
-		04E6292D1C5E7E8E00CD9C97 /* FKCouponTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKCouponTableViewController.xib; sourceTree = "<group>"; };
 		04E629371C5E7FEC00CD9C97 /* FKPunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPunchViewController.h; sourceTree = "<group>"; };
 		04E629381C5E7FEC00CD9C97 /* FKPunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKPunchViewController.m; sourceTree = "<group>"; };
 		04E629391C5E7FEC00CD9C97 /* FKPunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKPunchViewController.xib; sourceTree = "<group>"; };
+		04E70FC21C63943400A0685E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		828F1E531EADAAC5B7958806 /* Pods-Captain Pip's Florida Keys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.debug.xcconfig"; sourceTree = "<group>"; };
 		A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Captain Pip's Florida Keys.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D179EF4432E6C7F97A2909 /* Pods-Captain Pip's Florida Keys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.release.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E70FC31C63943400A0685E /* MapKit.framework in Frameworks */,
 				BB924BE99C12DDC653526E99 /* libPods-Captain Pip's Florida Keys.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,7 +124,7 @@
 			children = (
 				041B610E1C5BAE4900C6AB78 /* AppDelegate */,
 				041B61091C5BAB8200C6AB78 /* Model */,
-				041B610A1C5BAB8200C6AB78 /* View */,
+				049307641C60FBE0007F5BAD /* View */,
 				041B61071C5BA76400C6AB78 /* ViewController */,
 				041B60E01C5B9D2700C6AB78 /* Assets.xcassets */,
 				041B60E21C5B9D2700C6AB78 /* LaunchScreen.storyboard */,
@@ -126,9 +145,10 @@
 		041B61071C5BA76400C6AB78 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0493078E1C629284007F5BAD /* BaseViewController */,
+				049307881C6283CA007F5BAD /* CouponDetailsViewController */,
 				04E629361C5E7FEC00CD9C97 /* PunchViewController */,
 				04E6292A1C5E7E3000CD9C97 /* CouponTableViewController */,
-				04E629261C5E7D4000CD9C97 /* MHTabBarController */,
 				044AE05C1C5BF2DD00493AFB /* CouponViewController */,
 				044AE0541C5BE3F600493AFB /* LaunchViewController */,
 				041B61121C5BAEB100C6AB78 /* SignInViewController */,
@@ -139,19 +159,12 @@
 		041B61091C5BAB8200C6AB78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0493077F1C613620007F5BAD /* FKRequestManager */,
+				0493077B1C613600007F5BAD /* CouponObject */,
 				04E629161C5CDEAE00CD9C97 /* Categories */,
 				044AE0501C5BD59D00493AFB /* FKManager */,
-				041B610B1C5BADAE00C6AB78 /* FKRequestManager.h */,
-				041B610C1C5BADAE00C6AB78 /* FKRequestManager.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		041B610A1C5BAB8200C6AB78 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		041B610E1C5BAE4900C6AB78 /* AppDelegate */ = {
@@ -211,6 +224,69 @@
 			path = CouponViewController;
 			sourceTree = "<group>";
 		};
+		049307641C60FBE0007F5BAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0493076A1C60FC1E007F5BAD /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0493076A1C60FC1E007F5BAD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0493076B1C60FC1E007F5BAD /* CouponTableViewCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		0493076B1C60FC1E007F5BAD /* CouponTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0493076C1C60FC1E007F5BAD /* FKCouponTableViewCell.h */,
+				0493076D1C60FC1E007F5BAD /* FKCouponTableViewCell.m */,
+				0493076E1C60FC1E007F5BAD /* FKCouponTableViewCell.xib */,
+			);
+			path = CouponTableViewCell;
+			sourceTree = "<group>";
+		};
+		0493077B1C613600007F5BAD /* CouponObject */ = {
+			isa = PBXGroup;
+			children = (
+				0493077C1C613600007F5BAD /* FKCouponObject.h */,
+				0493077D1C613600007F5BAD /* FKCouponObject.m */,
+			);
+			path = CouponObject;
+			sourceTree = "<group>";
+		};
+		0493077F1C613620007F5BAD /* FKRequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				049307801C613620007F5BAD /* FKRequestManager.h */,
+				049307811C613620007F5BAD /* FKRequestManager.m */,
+			);
+			path = FKRequestManager;
+			sourceTree = "<group>";
+		};
+		049307881C6283CA007F5BAD /* CouponDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				049307891C6283CA007F5BAD /* FKCouponDetailsViewController.h */,
+				0493078A1C6283CA007F5BAD /* FKCouponDetailsViewController.m */,
+				0493078B1C6283CA007F5BAD /* FKCouponDetailsViewController.xib */,
+			);
+			path = CouponDetailsViewController;
+			sourceTree = "<group>";
+		};
+		0493078E1C629284007F5BAD /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0493078F1C6292A5007F5BAD /* FKBaseViewController.h */,
+				049307901C6292A5007F5BAD /* FKBaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
 		04E629161C5CDEAE00CD9C97 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,17 +294,10 @@
 				04E629181C5CDED000CD9C97 /* NSString+FKString.m */,
 				04E6291A1C5CF22100CD9C97 /* NSDictionary+FKDictionary.h */,
 				04E6291B1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m */,
+				049307711C610236007F5BAD /* UIFont+FKFont.h */,
+				049307721C610236007F5BAD /* UIFont+FKFont.m */,
 			);
 			path = Categories;
-			sourceTree = "<group>";
-		};
-		04E629261C5E7D4000CD9C97 /* MHTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				04E629271C5E7D4000CD9C97 /* MHTabBarController.h */,
-				04E629281C5E7D4000CD9C97 /* MHTabBarController.m */,
-			);
-			path = MHTabBarController;
 			sourceTree = "<group>";
 		};
 		04E6292A1C5E7E3000CD9C97 /* CouponTableViewController */ = {
@@ -236,7 +305,7 @@
 			children = (
 				04E6292B1C5E7E8E00CD9C97 /* FKCouponTableViewController.h */,
 				04E6292C1C5E7E8E00CD9C97 /* FKCouponTableViewController.m */,
-				04E6292D1C5E7E8E00CD9C97 /* FKCouponTableViewController.xib */,
+				049307761C610568007F5BAD /* FKCouponTableViewController.xib */,
 			);
 			path = CouponTableViewController;
 			sourceTree = "<group>";
@@ -254,6 +323,7 @@
 		9A3103D02EB8474D8AF5BEC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04E70FC21C63943400A0685E /* MapKit.framework */,
 				A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */,
 			);
 			name = Frameworks;
@@ -334,7 +404,9 @@
 				041B60E11C5B9D2700C6AB78 /* Assets.xcassets in Resources */,
 				044AE0631C5BFC4000493AFB /* FKSignInViewController.xib in Resources */,
 				044AE05B1C5BE48400493AFB /* FKLaunchViewController.xib in Resources */,
-				04E6292F1C5E7E8E00CD9C97 /* FKCouponTableViewController.xib in Resources */,
+				049307701C60FC1E007F5BAD /* FKCouponTableViewCell.xib in Resources */,
+				049307771C610568007F5BAD /* FKCouponTableViewController.xib in Resources */,
+				0493078D1C6283CA007F5BAD /* FKCouponDetailsViewController.xib in Resources */,
 				044AE0611C5BF2FB00493AFB /* FKCouponViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,11 +468,15 @@
 			files = (
 				04E6292E1C5E7E8E00CD9C97 /* FKCouponTableViewController.m in Sources */,
 				044AE0531C5BD59D00493AFB /* FKManager.m in Sources */,
+				049307821C613620007F5BAD /* FKRequestManager.m in Sources */,
+				0493076F1C60FC1E007F5BAD /* FKCouponTableViewCell.m in Sources */,
+				049307911C6292A5007F5BAD /* FKBaseViewController.m in Sources */,
 				04E629191C5CDED000CD9C97 /* NSString+FKString.m in Sources */,
-				041B610D1C5BADAE00C6AB78 /* FKRequestManager.m in Sources */,
+				049307731C610236007F5BAD /* UIFont+FKFont.m in Sources */,
 				044AE0601C5BF2FB00493AFB /* FKCouponViewController.m in Sources */,
+				0493077E1C613600007F5BAD /* FKCouponObject.m in Sources */,
 				04E6293A1C5E7FEC00CD9C97 /* FKPunchViewController.m in Sources */,
-				04E629291C5E7D4000CD9C97 /* MHTabBarController.m in Sources */,
+				0493078C1C6283CA007F5BAD /* FKCouponDetailsViewController.m in Sources */,
 				04E6291C1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m in Sources */,
 				044AE0571C5BE41400493AFB /* FKLaunchViewController.m in Sources */,
 				041B60D61C5B9D2700C6AB78 /* main.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "FKCouponViewController.h"
-#import "MHTabBarController.h"
 #import "AppDelegate.h"
 
 static const NSInteger TagOffset = 1000;
@@ -23,9 +22,6 @@ static const NSInteger TagOffset = 1000;
 @property (weak, nonatomic) IBOutlet UIButton *faqButton;
 @property (weak, nonatomic) IBOutlet UIView *bodyView;
 
-
-@property (nonatomic, strong) NSString *shopID;
-
 @end
 
 @implementation FKCouponViewController {
@@ -35,11 +31,7 @@ static const NSInteger TagOffset = 1000;
 }
 
 - (instancetype)init {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
-    if (self) {
-        self.shopID = SHOP_ID;
-    }
-    return self;
+    return [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
 - (void)viewDidLoad {
@@ -93,7 +85,7 @@ static const NSInteger TagOffset = 1000;
     CGRect rect = CGRectMake(0.0f, 0.0f, self.bodyView.bounds.size.width, self.tabBarHeight);
     tabButtonsContainerView = [[UIView alloc] initWithFrame:rect];
     tabButtonsContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    tabButtonsContainerView.backgroundColor = [UIColor redColor];
+
     [self.bodyView addSubview:tabButtonsContainerView];
     
     rect.origin.y = self.tabBarHeight;
@@ -126,6 +118,9 @@ static const NSInteger TagOffset = 1000;
     {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = TagOffset + index;
+        if (index >= 2) {
+            return;
+        }
         button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
         button.titleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
         
@@ -157,7 +152,7 @@ static const NSInteger TagOffset = 1000;
 - (void)layoutTabButtons
 {
     NSUInteger index = 0;
-    NSUInteger count = [self.viewControllers count];
+    NSUInteger count = [self.viewControllers count]-1;
     
     CGRect rect = CGRectMake(0.0f, 0.0f, floorf(self.view.bounds.size.width / count), self.tabBarHeight);
     
@@ -251,8 +246,10 @@ static const NSInteger TagOffset = 1000;
         
         if (_selectedIndex != NSNotFound)
         {
-            UIButton *fromButton = (UIButton *)[tabButtonsContainerView viewWithTag:TagOffset + _selectedIndex];
-            [self deselectTabButton:fromButton];
+            if (newSelectedIndex < 2) {
+                UIButton *fromButton = (UIButton *)[tabButtonsContainerView viewWithTag:TagOffset + _selectedIndex];
+                [self deselectTabButton:fromButton];
+            }
             fromViewController = self.selectedViewController;
         }
         
@@ -354,6 +351,11 @@ static const NSInteger TagOffset = 1000;
     [self setSelectedIndex:sender.tag - TagOffset animated:YES];
 }
 
+- (void)showCouponObjectDetail:(FKCouponObject *)coupon {
+    
+    [self setSelectedIndex:2 animated:YES];
+}
+
 #pragma mark - Change these methods to customize the look of the buttons
 
 - (void)selectTabButton:(UIButton *)button
@@ -376,7 +378,7 @@ static const NSInteger TagOffset = 1000;
     [button setBackgroundImage:image forState:UIControlStateNormal];
     [button setBackgroundImage:image forState:UIControlStateHighlighted];
     
-    [button setTitleColor:[UIColor colorWithRed:175/255.0f green:85/255.0f blue:58/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 

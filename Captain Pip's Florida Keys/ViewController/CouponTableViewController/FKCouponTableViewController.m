@@ -7,8 +7,16 @@
 //
 
 #import "FKCouponTableViewController.h"
+#import "FKCouponDetailsViewController.h"
+#import "FKCouponViewController.h"
+#import "FKCouponTableViewCell.h"
+#import "FKCouponObject.h"
 
 @interface FKCouponTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSMutableArray *couponsArray;
 
 @end
 
@@ -21,56 +29,107 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.couponsArray = [[NSMutableArray alloc] init];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([FKCouponTableViewCell class]) bundle:nil] forCellReuseIdentifier:CouponTableViewCellIdentifier];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getTotalShopsCount];
 }
+
+
+#pragma mark - Helper
+
+- (void)getTotalShopsCount {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [FKRequestManager requestNumberOfShops:^(id response) {
+        if ([response[@"Result"] isEqualToString:@"Success"]) {
+            if ([response[@"Keyresult"] isKindOfClass:[NSString class]] && [response[@"Keyresult"] intValue] == 0) {
+                
+            } else if ([response[@"Keyresult"] isKindOfClass:[NSString class]] && [response[@"Keyresult"] intValue] == 1) {
+                
+            } else
+                [self getAvailableShops];
+        }
+        
+        NSLog(@"Shops: %@", response);
+       [MBProgressHUD hideHUDForView:self.view animated:YES];
+    } failure:^(id failure) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+
+- (void)getAvailableShops {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [self.couponsArray removeAllObjects];
+    [FKRequestManager requestAvailableShops:^(id response) {
+        NSArray *responseArray = response[@"CouponResult"];
+        
+        [self storeShopDetails:responseArray];
+        
+        NSArray *couponObjects = [responseArray valueForKeyPath:@"result"][0];
+        for (NSArray *object in couponObjects) {
+            FKCouponObject *coupon = [[FKCouponObject alloc] initWithArray:object];
+            [self.couponsArray addObject:coupon];
+        }
+        
+        [self.tableView reloadData];
+        
+        NSLog(@"Shops data: %@", response);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    } failure:^(id failure) {
+        
+        NSLog(@"Error: %@", failure);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+
+- (void)storeShopDetails:(NSArray *)data {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[data valueForKey:KEY_SHOP_ADDRESS][0] forKey:KEY_SHOP_ADDRESS];
+    [defaults setObject:[data valueForKey:KEY_SHOP_LAT][0] forKey:KEY_SHOP_LAT];
+    [defaults setObject:[data valueForKey:KEY_SHOP_LONG][0] forKey:KEY_SHOP_LONG];
+    [defaults setObject:[data valueForKey:KEY_SHOP_NAME][0] forKey:KEY_SHOP_NAME];
+    [defaults setObject:[data valueForKey:KEY_SHOP_PHONE][0] forKey:KEY_SHOP_PHONE];
+}
+
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 20;
+    return self.couponsArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+    FKCouponTableViewCell *cell = (FKCouponTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CouponTableViewCellIdentifier];
+    if (cell == nil) {
+        cell = [[FKCouponTableViewCell alloc] init];
+    }
     
-    cell.textLabel.text = @"Text";
+    FKCouponObject *coupon = self.couponsArray[indexPath.row];
+    [cell setCoupon:coupon];
     
     return cell;
 }
 
 
-
-/*
 #pragma mark - UITableViewDelegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 234;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FKCouponObject *couponObject = self.couponsArray[indexPath.row];
+    FKCouponViewController *couponVC = (FKCouponViewController *)self.parentViewController;
+    [couponVC showCouponObjectDetail:couponObject];
+}
+
 
 
 @end

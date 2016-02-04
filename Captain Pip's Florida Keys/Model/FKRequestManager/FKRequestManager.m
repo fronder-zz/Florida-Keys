@@ -46,7 +46,7 @@
 }
 
 + (void)requestShopDetails:(void(^)(id response))success failure:(void(^)(id failure))failure {
-    NSString *URLString = [NSString stringWithFormat:@"%@%@/%@", API_COMMON_URL, METHOD_SHOP_DETAILS, SHOP_ID];
+    NSString *URLString = [NSString stringWithFormat:@"%@%@/%@", API_COMMON_URL, METHOD_SHOP_DETAILS, BASE_SHOP_ID];
     
     [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
@@ -56,6 +56,28 @@
 }
 
 + (void)requestCheckDeviceWithURLString:(NSString *)URLString withBlock:(void(^)(id response))success failure:(void(^)(id failure))failure {
+    
+    [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+
++ (void)requestNumberOfShops:(void(^)(id response))success failure:(void(^)(id failure))failure {
+    NSString *URLString = [NSString stringWithFormat:@"%@%@/%@", API_COMMON_URL, METHOD_SHOP_NUMBER, BASE_SHOP_ID];
+    
+    [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+
++ (void)requestAvailableShops:(void(^)(id response))success failure:(void(^)(id failure))failure {
+    NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_ID];
+    NSAssert(userid, @"There is no USER ID");
+    NSString *URLString =[NSString stringWithFormat:API_SHOPS_URL , BASE_SHOP_ID, userid];
     
     [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
@@ -77,6 +99,8 @@
         failure(error);
     }];
 }
+
+
 
 
 @end

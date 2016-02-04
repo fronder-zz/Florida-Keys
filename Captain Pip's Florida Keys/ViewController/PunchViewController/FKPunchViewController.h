@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FKBaseViewController.h"
 
-@interface FKPunchViewController : UIViewController
+@interface FKPunchViewController : FKBaseViewController
 
 
 

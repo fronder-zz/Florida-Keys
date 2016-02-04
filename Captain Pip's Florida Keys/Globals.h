@@ -30,17 +30,19 @@
 // API
 #define API_BASE_URL            @"http://www.milemarkercoupons.com"
 #define API_COMMON_URL          @"http://www.milemarkercoupons.com/api/shop.php/service"
+#define API_SHOPS_URL           @"http://www.milemarkercoupons.com/api/couponapi.php?shopid=%@&userid=%@"
 
 // Methods
 #define METHOD_SHOP_DETAILS     @"/getshopdetails"
 #define METHOD_CHECK_DEVICE     @"/checkdevice"
 #define METHOD_ADD_USER         @"/addUser"
+#define METHOD_SHOP_NUMBER      @"/shopcount"
 
 // Common
 #ifdef CAPTAIN_PIPS_FLORIDA_KEYS
-#define USER_ID                 @"userID"
-#define SHOP_ID                 @"B0301"
-#define SHOP_NAME               @"Captain Pip's Florida Keys"
+#define BASE_USER_ID            @"userID"
+#define BASE_SHOP_ID            @"B0301"
+#define BASE_SHOP_NAME          @"Captain Pip's Florida Keys"
 #endif
 
 // Keys
@@ -51,6 +53,11 @@
 #define KEY_DEVICE_ID           @"fld_deviceid"
 #define KEY_SHOP_ID             @"fld_shopid"
 #define KEY_USER_ID             @"fld_userid"
+#define KEY_SHOP_ADDRESS        @"fld_address"
+#define KEY_SHOP_LAT            @"fld_shoplat"
+#define KEY_SHOP_LONG           @"fld_shoplng"
+#define KEY_SHOP_NAME           @"fld_shopname"
+#define KEY_SHOP_PHONE          @"fld_shopphoneno"
 
 // Helper
 #define APP_DELEGATE            (AppDelegate *)[UIApplication sharedApplication].delegate

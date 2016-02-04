@@ -72,7 +72,7 @@
         
         if (self.emailTF.text.length > 0) {
             if (![self.emailTF.text isValidEmail]) {
-                [[[UIAlertView alloc] initWithTitle:SHOP_NAME message:@"Please enter valid Email Address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                [[[UIAlertView alloc] initWithTitle:BASE_SHOP_NAME message:@"Please enter valid Email Address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
                 [MBProgressHUD hideAllHUDsForView:[self view] animated:YES];
                 return;
             }
@@ -82,12 +82,12 @@
                                      KEY_USERNAME: self.usernameTF.text,
                                      KEY_DEVICE_TYPE: @"2",
                                      KEY_DEVICE_ID: DEVICE_ID,
-                                     KEY_SHOP_ID: SHOP_ID};
+                                     KEY_SHOP_ID: BASE_SHOP_ID};
         
         [FKRequestManager requestAddUserWithParameters:parameters withBlock:^(id response) {
             if ([response[@"Result"] isEqualToString:@"Success"]) {
                 if ([response[@"UserDetails"] isKindOfClass:[NSString class]] && [response[@"UserDetails"] isEqualToString:@"Email Already exists"]) {
-                    [[[UIAlertView alloc] initWithTitle:SHOP_NAME message:@"Email already exists" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                    [[[UIAlertView alloc] initWithTitle:BASE_SHOP_NAME message:@"Email already exists" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
                 } else {
                     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                     [defaults setObject:response[KEY_USER_ID] forKey:KEY_USER_ID];
@@ -99,7 +99,7 @@
                     [self gotoCouponViewController];
                 }
             } else {
-                [[[UIAlertView alloc] initWithTitle:SHOP_NAME message:@"Unable to Sign in" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                [[[UIAlertView alloc] initWithTitle:BASE_SHOP_NAME message:@"Unable to Sign in" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
             }
             
             [MBProgressHUD hideAllHUDsForView:[self view] animated:YES];
