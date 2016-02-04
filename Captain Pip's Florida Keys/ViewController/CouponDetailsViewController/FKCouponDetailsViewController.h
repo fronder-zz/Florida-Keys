@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "FKBaseViewController.h"
 
+@class FKCouponObject;
+
 @interface FKCouponDetailsViewController : FKBaseViewController
 
+@property (nonatomic, strong) FKCouponObject *coupon;
+
 @end
+

@@ -20,22 +20,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *phoneButton;
 @property (weak, nonatomic) IBOutlet UILabel *addressLbl;
 @property (weak, nonatomic) IBOutlet MKMapView *map;
-
-@property (nonatomic, strong) FKCouponObject *coupon;
-
+@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 
 
 @end
 
 @implementation FKCouponDetailsViewController
-
-- (instancetype)initWithCouponObject:(FKCouponObject *)couponObject {
-    self = [self init];
-    if (self) {
-        self.coupon = couponObject;
-    }
-    return self;
-}
 
 - (instancetype)init {
     return [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
@@ -44,12 +34,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 717)];
     self.facebookButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self reloadView];
+}
+
 - (void)viewDidLayoutSubviews {
-    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 717)];
     [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 717)];
 }
 
@@ -61,9 +55,48 @@
 }
 
 - (IBAction)phoneButtonClicked:(id)sender {
+    NSString *phoneNumber = self.phoneButton.titleLabel.text;
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phoneNumber]];
+    
+    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
+        [[UIApplication sharedApplication] openURL:phoneUrl];
+    }
+    else {
+        [[[UIAlertView alloc]initWithTitle:BASE_SHOP_NAME message:@"Call facility is not available!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    }
 }
 
 - (IBAction)facebookButtonClicked:(id)sender {
+    
+}
+
+
+#pragma mark - Helper
+
+- (void)reloadView {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    self.addressLbl.text = [defaults objectForKey:KEY_SHOP_ADDRESS];
+    
+    NSString *title = [defaults objectForKey:KEY_SHOP_PHONE];
+    [self.phoneButton setTitle:title forState:UIControlStateNormal];
+    
+    [self.mainImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", API_BASE_URL, self.coupon.imagePath]]];
+    NSString *latitude = [defaults objectForKey:KEY_SHOP_LAT];
+    NSString *longitude = [defaults objectForKey:KEY_SHOP_LONG];
+    
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate = location;
+    annotation.title = [defaults objectForKey:KEY_SHOP_NAME];
+    
+    [self.map addAnnotation:annotation];
+    
+    MKCoordinateRegion region = self.map.region;
+    region.center = location;
+    region.span.longitudeDelta = 0.001; // Bigger the value, closer the map view
+    region.span.latitudeDelta = 0.001;
+    [self.map setRegion:region animated:YES]; // Choose if you want animate or not
 }
 
 

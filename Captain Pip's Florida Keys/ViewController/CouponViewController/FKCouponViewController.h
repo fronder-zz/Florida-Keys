@@ -18,7 +18,7 @@
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic, weak) id <FKTabBarControllerDelegate> delegate;
 
-- (void)showCouponObjectDetail:(FKCouponObject *)coupon;
+- (void)showDetailForCouponObject:(FKCouponObject *)coupon;
 - (void)setSelectedIndex:(NSUInteger)index animated:(BOOL)animated;
 - (void)setSelectedViewController:(UIViewController *)viewController animated:(BOOL)animated;
 

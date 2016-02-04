@@ -37,6 +37,8 @@
 #define METHOD_CHECK_DEVICE     @"/checkdevice"
 #define METHOD_ADD_USER         @"/addUser"
 #define METHOD_SHOP_NUMBER      @"/shopcount"
+#define METHOD_SPECIAL_OFFER    @"/specialoffer"
+#define METHOD_OFFER_DETAILS    @"/shopdetails"
 
 // Common
 #ifdef CAPTAIN_PIPS_FLORIDA_KEYS

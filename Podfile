@@ -7,6 +7,7 @@ target 'Captain Pip\'s Florida Keys' do
 
 pod 'AFNetworking', '~> 3.0'
 pod 'MBProgressHUD', '~> 0.9.2'
+pod 'FBSDKShareKit'
 
 end
 

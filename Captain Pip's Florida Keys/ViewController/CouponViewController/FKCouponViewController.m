@@ -7,6 +7,8 @@
 //
 
 #import "FKCouponViewController.h"
+#import "FKCouponDetailsViewController.h"
+#import "FKOfferViewController.h"
 #import "AppDelegate.h"
 
 static const NSInteger TagOffset = 1000;
@@ -58,6 +60,26 @@ static const NSInteger TagOffset = 1000;
         contentContainerView = nil;
         indicatorImageView = nil;
     }
+}
+
+
+#pragma mark - Action
+
+- (IBAction)offerButtonClicked:(id)sender {
+    FKOfferViewController *offerVC = [[FKOfferViewController alloc] init];
+    
+}
+
+- (IBAction)eventButtonClicked:(id)sender {
+    
+}
+
+- (IBAction)settingsButtonClicked:(id)sender {
+    
+}
+
+- (IBAction)faqButtonClicked:(id)sender {
+    
 }
 
 
@@ -246,10 +268,19 @@ static const NSInteger TagOffset = 1000;
         
         if (_selectedIndex != NSNotFound)
         {
+            NSInteger _tag;
             if (newSelectedIndex < 2) {
-                UIButton *fromButton = (UIButton *)[tabButtonsContainerView viewWithTag:TagOffset + _selectedIndex];
+                if (_selectedIndex == 2) {
+                    _tag = 1000;
+                } else {
+                    _tag = TagOffset + _selectedIndex;
+                }
+                
+                UIButton *fromButton = (UIButton *)[tabButtonsContainerView viewWithTag:_tag];
                 [self deselectTabButton:fromButton];
-            }
+            } else
+                _tag = TagOffset + _selectedIndex;
+            
             fromViewController = self.selectedViewController;
         }
         
@@ -351,9 +382,11 @@ static const NSInteger TagOffset = 1000;
     [self setSelectedIndex:sender.tag - TagOffset animated:YES];
 }
 
-- (void)showCouponObjectDetail:(FKCouponObject *)coupon {
-    
-    [self setSelectedIndex:2 animated:YES];
+- (void)showDetailForCouponObject:(FKCouponObject *)coupon {
+    NSInteger ID = 2;
+    FKCouponDetailsViewController *detailsVC = (FKCouponDetailsViewController *)(self.viewControllers)[ID];
+    detailsVC.coupon = coupon;
+    [self setSelectedIndex:ID animated:YES];
 }
 
 #pragma mark - Change these methods to customize the look of the buttons

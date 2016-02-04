@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="addressLbl" destination="q6V-kl-qIB" id="Oda-3p-eis"/>
                 <outlet property="facebookButton" destination="PJ0-eY-9bU" id="vr3-e1-yhN"/>
+                <outlet property="mainImageView" destination="mxc-vq-k1W" id="dml-tc-UJT"/>
                 <outlet property="map" destination="aCy-8T-GXW" id="Xb8-6e-qti"/>
                 <outlet property="phoneButton" destination="pvl-KO-lH3" id="66P-Kt-rOi"/>
                 <outlet property="scrollContentView" destination="d1a-Kg-qg1" id="d6U-1F-pT8"/>
@@ -52,7 +53,7 @@
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mxc-vq-k1W">
                                     <rect key="frame" x="82" y="39" width="156" height="252"/>
-                                    <color key="backgroundColor" red="0.86095010080000001" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="156" id="LHH-r2-Kob"/>
                                         <constraint firstAttribute="height" constant="252" id="eGK-cC-Uch"/>
@@ -75,7 +76,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="3vS-2b-PI1"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
@@ -94,7 +95,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Nlw-B7-HBk"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.3529411764705882" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
@@ -108,7 +109,7 @@
                                         </mask>
                                     </variation>
                                 </label>
-                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aCy-8T-GXW">
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aCy-8T-GXW">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="260" id="vUZ-PS-Pyf"/>
@@ -153,21 +154,20 @@
                                             <rect key="frame" x="62" y="304" width="149" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="GUm-fb-M3V"/>
-                                                <constraint firstAttribute="width" constant="149" id="yTn-u9-QZv"/>
                                             </constraints>
-                                            <state key="normal">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <state key="normal" title="tes">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="GUm-fb-M3V"/>
-                                                    <exclude reference="yTn-u9-QZv"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="GUm-fb-M3V"/>
-                                                    <include reference="yTn-u9-QZv"/>
                                                 </mask>
                                             </variation>
                                             <connections>
@@ -205,12 +205,12 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="pvl-KO-lH3" firstAttribute="centerY" secondItem="Ybj-FI-rzX" secondAttribute="centerY" id="0HC-4E-VLy"/>
-                                        <constraint firstItem="pvl-KO-lH3" firstAttribute="leading" secondItem="HEq-Uj-NZd" secondAttribute="trailing" constant="8" id="2lJ-Gr-k9O"/>
                                         <constraint firstAttribute="trailing" secondItem="PJ0-eY-9bU" secondAttribute="trailing" constant="8" id="ArQ-oR-Zoy"/>
                                         <constraint firstItem="PJ0-eY-9bU" firstAttribute="leading" secondItem="pvl-KO-lH3" secondAttribute="trailing" constant="7" id="RW9-uf-4rh"/>
                                         <constraint firstItem="PJ0-eY-9bU" firstAttribute="centerY" secondItem="HEq-Uj-NZd" secondAttribute="centerY" id="YIs-sc-R6Z"/>
                                         <constraint firstAttribute="height" constant="36" id="bxz-9t-UgN"/>
                                         <constraint firstItem="pvl-KO-lH3" firstAttribute="centerY" secondItem="HEq-Uj-NZd" secondAttribute="centerY" id="fYQ-7Q-Nid"/>
+                                        <constraint firstItem="pvl-KO-lH3" firstAttribute="leading" secondItem="Ybj-FI-rzX" secondAttribute="leading" constant="37" id="ok4-jx-Hw6"/>
                                         <constraint firstAttribute="width" constant="300" id="seS-FZ-lHy"/>
                                         <constraint firstItem="HEq-Uj-NZd" firstAttribute="leading" secondItem="Ybj-FI-rzX" secondAttribute="leading" constant="8" id="wos-ZV-D1X"/>
                                     </constraints>
@@ -225,8 +225,8 @@
                                             <exclude reference="seS-FZ-lHy"/>
                                             <exclude reference="wos-ZV-D1X"/>
                                             <exclude reference="0HC-4E-VLy"/>
-                                            <exclude reference="2lJ-Gr-k9O"/>
                                             <exclude reference="fYQ-7Q-Nid"/>
+                                            <exclude reference="ok4-jx-Hw6"/>
                                             <exclude reference="ArQ-oR-Zoy"/>
                                             <exclude reference="RW9-uf-4rh"/>
                                             <exclude reference="YIs-sc-R6Z"/>
@@ -243,8 +243,8 @@
                                             <include reference="seS-FZ-lHy"/>
                                             <include reference="wos-ZV-D1X"/>
                                             <include reference="0HC-4E-VLy"/>
-                                            <include reference="2lJ-Gr-k9O"/>
                                             <include reference="fYQ-7Q-Nid"/>
+                                            <include reference="ok4-jx-Hw6"/>
                                             <include reference="ArQ-oR-Zoy"/>
                                             <include reference="RW9-uf-4rh"/>
                                             <include reference="YIs-sc-R6Z"/>
@@ -256,7 +256,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="1dW-I8-3sU"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">

@@ -27,4 +27,7 @@
 // Get available shops data
 + (void)requestAvailableShops:(void(^)(id response))success failure:(void(^)(id failure))failure;
 
+// Get offer
++ (void)requestSpecialOffer:(void(^)(id response))success failure:(void(^)(id failure))failure;
+
 @end

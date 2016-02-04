@@ -127,7 +127,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FKCouponObject *couponObject = self.couponsArray[indexPath.row];
     FKCouponViewController *couponVC = (FKCouponViewController *)self.parentViewController;
-    [couponVC showCouponObjectDetail:couponObject];
+    [couponVC showDetailForCouponObject:couponObject];
 }
 
 
