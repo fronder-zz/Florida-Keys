@@ -39,6 +39,9 @@
 #define METHOD_SHOP_NUMBER      @"/shopcount"
 #define METHOD_SPECIAL_OFFER    @"/specialoffer"
 #define METHOD_OFFER_DETAILS    @"/shopdetails"
+#define METHOD_SPECIAL          @"/special"
+#define METHOD_POLICE           @"/police"
+#define METHOD_EVENTS           @"/getevents"
 
 // Common
 #ifdef CAPTAIN_PIPS_FLORIDA_KEYS
@@ -49,6 +52,8 @@
 
 // Keys
 #define KEY_DEVICE_TOKEN        @"deviceToken"
+#define KEY_OFFER_ID            @"offerID"
+
 #define KEY_USERNAME            @"fld_username"
 #define KEY_EMAIL               @"fld_useremail"
 #define KEY_DEVICE_TYPE         @"fld_devicetype"
@@ -60,6 +65,8 @@
 #define KEY_SHOP_LONG           @"fld_shoplng"
 #define KEY_SHOP_NAME           @"fld_shopname"
 #define KEY_SHOP_PHONE          @"fld_shopphoneno"
+#define KEY_SPECIAL_ID          @"fld_specialid"
+#define KEY_POLICE_ID           @"fld_policeid"
 
 // Helper
 #define APP_DELEGATE            (AppDelegate *)[UIApplication sharedApplication].delegate

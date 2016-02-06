@@ -22,5 +22,6 @@
 #import "NSString+FKString.h"
 #import "NSDictionary+FKDictionary.h"
 #import "UIFont+FKFont.h"
+#import "UIImage+animatedGIF.h"
 
 #endif /* FloridaKeysPrefixHeader_pch */

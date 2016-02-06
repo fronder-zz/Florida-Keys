@@ -9,8 +9,9 @@
 #import "FKOfferViewController.h"
 #import "AppDelegate.h"
 
-@interface FKOfferViewController () {
-    AppDelegate *appDelegate;
+@interface FKOfferViewController () <MBProgressHUDDelegate> {
+    AppDelegate *_appDelegate;
+    MBProgressHUD *_progressHud;
 }
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -22,11 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    appDelegate = APP_DELEGATE;
+    _appDelegate = APP_DELEGATE;
     
     [FKRequestManager requestSpecialOffer:^(id response) {
         if ([response[@"Result"] isEqualToString:@"Success"]) {
-//            response[@"SpecialOffer"]
+            NSArray *speccialOfferArray = response[@"SpecialOffer"];
+            NSString *specialID = [speccialOfferArray valueForKey:KEY_SPECIAL_ID][0];
+            [[NSUserDefaults standardUserDefaults] setObject:specialID forKey:KEY_OFFER_ID];
             
             NSString *urlString = [NSString stringWithFormat:@"%@%@/%@sploffer.html", API_BASE_URL, METHOD_OFFER_DETAILS, BASE_SHOP_ID];
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
@@ -45,6 +48,13 @@
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.title = @"Our special offer";
+    self.navigationController.navigationBarHidden = NO;
+}
+
 -(void)viewWillDisappear:(BOOL)animated {
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
@@ -57,15 +67,19 @@
     return YES;
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    [MBProgressHUD showHUDAddedTo:appDelegate.window animated:YES];
+    _progressHud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.webView addSubview:_progressHud];
+    _progressHud.delegate = self;
+    _progressHud.labelText = @"Loading";
+    [_progressHud show:YES];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [MBProgressHUD hideAllHUDsForView:appDelegate.window animated:YES];
+    [_progressHud hide:YES];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [MBProgressHUD hideAllHUDsForView:appDelegate.window animated:YES];
+    [_progressHud hide:YES];
 }
 
 

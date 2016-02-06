@@ -9,11 +9,14 @@
 #import "FKCouponViewController.h"
 #import "FKCouponDetailsViewController.h"
 #import "FKOfferViewController.h"
+#import "FKEventsViewController.h"
+#import "FKSettingsViewController.h"
+#import "FKFAQViewController.h"
 #import "AppDelegate.h"
 
 static const NSInteger TagOffset = 1000;
 
-@interface FKCouponViewController () 
+@interface FKCouponViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonsMiddleLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *offerEventLayout;
@@ -24,6 +27,9 @@ static const NSInteger TagOffset = 1000;
 @property (weak, nonatomic) IBOutlet UIButton *faqButton;
 @property (weak, nonatomic) IBOutlet UIView *bodyView;
 
+@property (nonatomic, assign) BOOL offerAvailable;
+@property (nonatomic, assign) BOOL policeAvailable;
+
 @end
 
 @implementation FKCouponViewController {
@@ -31,6 +37,27 @@ static const NSInteger TagOffset = 1000;
     UIView *contentContainerView;
     UIImageView *indicatorImageView;
 }
+
+
+- (void)setOfferAvailable:(BOOL)offerAvailable {
+    if (offerAvailable) {
+        NSString *resource = IS_IPAD ? @"BLINKING-SPECIAL-190X50" : @"BLINKING-SPECIAL-110X30";
+        NSURL *url = [[NSBundle mainBundle] URLForResource:resource withExtension:@"gif"];
+        [self.offerButton setBackgroundImage:[UIImage animatedImageWithAnimatedGIFURL:url] forState:UIControlStateNormal];
+    } else
+        [self.offerButton setBackgroundImage:IS_IPAD ? IMAGE(@"OFFER-190X50.gif") : IMAGE(@"OFFER-110X30.gif") forState:UIControlStateNormal];
+}
+
+- (void)setPoliceAvailable:(BOOL)policeAvailable {
+    if (policeAvailable) {
+        NSString *resource = IS_IPAD ? @"POLICE-BLINKING-190X50" : @"POLICE-BLINKING-110X30";
+        NSURL *url = [[NSBundle mainBundle] URLForResource:resource withExtension:@"gif"];
+        [self.eventButton setBackgroundImage:[UIImage animatedImageWithAnimatedGIFURL:url] forState:UIControlStateNormal];
+    } else
+        [self.eventButton setBackgroundImage:IS_IPAD ? IMAGE(@"POLICE-190X50.gif") : IMAGE(@"POLICE-110X30.gif") forState:UIControlStateNormal];
+}
+
+#pragma mark - Lyfecycle
 
 - (instancetype)init {
     return [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
@@ -41,6 +68,13 @@ static const NSInteger TagOffset = 1000;
     
     [self layoutViews];
     [self initialize];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getSpecial];
+    [self getPolice];
 }
 
 - (void)viewWillLayoutSubviews
@@ -66,24 +100,53 @@ static const NSInteger TagOffset = 1000;
 #pragma mark - Action
 
 - (IBAction)offerButtonClicked:(id)sender {
-    FKOfferViewController *offerVC = [[FKOfferViewController alloc] init];
-    
+    [self.navigationController pushViewController:[[FKOfferViewController alloc] init] animated:YES];
 }
 
 - (IBAction)eventButtonClicked:(id)sender {
-    
+    [self.navigationController pushViewController:[[FKEventsViewController alloc] init] animated:YES];
 }
 
 - (IBAction)settingsButtonClicked:(id)sender {
-    
+    [self.navigationController pushViewController:[[FKSettingsViewController alloc] init] animated:YES];
 }
 
 - (IBAction)faqButtonClicked:(id)sender {
-    
+    [self.navigationController pushViewController:[[FKFAQViewController alloc] init] animated:YES];
 }
 
 
 #pragma mark - Helper
+
+- (void)getSpecial {
+    [FKRequestManager requestSpecial:^(id response) {
+       if ([response[@"Result"] isEqualToString:@"Success"]) {
+           NSString *offer = response[@"SpecialOffer"];
+           NSString *offerID = [response[@"Offerid"] valueForKey:KEY_SPECIAL_ID][0];
+           NSString *storedOfferID = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_OFFER_ID];
+           if ([offerID isEqualToString:storedOfferID]) {
+               [self setOfferAvailable:NO];
+           } else
+               [self setOfferAvailable:[offer isEqualToString:@"Offer Available"]];
+       }
+        
+        
+    } failure:^(id failure) {}];
+}
+
+- (void)getPolice {
+    [FKRequestManager requestPolice:^(id response) {
+        if ([response[@"Result"] isEqualToString:@"Success"]) {
+            NSString *alert = response[@"PoliceAlert"];
+            NSString *policeID = [response[@"Alertid"] valueForKey:KEY_POLICE_ID][0];
+            NSString *storedPoliceID = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_POLICE_ID];
+            if ([policeID isEqualToString:storedPoliceID]) {
+                [self setPoliceAvailable:NO];
+            } else
+                [self setPoliceAvailable:[alert isEqualToString:@"Alert Available"]];
+        }
+    } failure:^(id failure) {}];
+}
 
 - (void)layoutViews {
     if (IS_IPHONE_5_OR_LESS) {
@@ -95,8 +158,9 @@ static const NSInteger TagOffset = 1000;
         self.offerEventLayout.constant += 10;
     }
     
-    [self.offerButton setBackgroundImage:IMAGE(@"OFFER-190X50.gif") forState:UIControlStateNormal];
-    [self.eventButton setBackgroundImage:IMAGE(@"POLICE-190X50.gif") forState:UIControlStateNormal];
+    [self.offerButton setBackgroundImage:IS_IPAD ? IMAGE(@"OFFER-190X50.gif") : IMAGE(@"OFFER-110X30.gif") forState:UIControlStateNormal];
+    [self.eventButton setBackgroundImage:IS_IPAD ? IMAGE(@"POLICE-190X50.gif") : IMAGE(@"POLICE-110X30.gif") forState:UIControlStateNormal];
+    
     self.settingsButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.faqButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }

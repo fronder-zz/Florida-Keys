@@ -96,6 +96,38 @@
     }];
 }
 
++ (void)requestSpecial:(void(^)(id response))success failure:(void(^)(id failure))failure {
+    NSString *URLString = [NSString stringWithFormat:@"%@%@/%@", API_COMMON_URL, METHOD_SPECIAL, BASE_SHOP_ID];
+    
+    [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+
++ (void)requestPolice:(void(^)(id response))success failure:(void(^)(id failure))failure {
+    NSString *URLString = [NSString stringWithFormat:@"%@%@/%@", API_COMMON_URL, METHOD_POLICE, BASE_SHOP_ID];
+    
+    [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+
++ (void)requestEvents:(void(^)(id response))success failure:(void(^)(id failure))failure {
+    NSString *URLString = [NSString stringWithFormat:@"%@%@/%@", API_COMMON_URL, METHOD_EVENTS, BASE_SHOP_ID];
+    
+    [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+
+
+// POST
 + (void)requestAddUserWithParameters:(id)parameters withBlock:(void(^)(id response))success failure:(void(^)(id failure))failure {
     
     NSString *URLString = [NSString stringWithFormat:@"%@%@", API_COMMON_URL, METHOD_ADD_USER];

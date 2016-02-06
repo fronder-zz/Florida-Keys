@@ -53,6 +53,17 @@
 		04E70FE81C63D78000A0685E /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04E70FD61C63D78000A0685E /* RobotoCondensed-Regular.ttf */; };
 		04E70FED1C63D95C00A0685E /* FKOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E70FEB1C63D95C00A0685E /* FKOfferViewController.m */; };
 		04E70FEE1C63D95C00A0685E /* FKOfferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E70FEC1C63D95C00A0685E /* FKOfferViewController.xib */; };
+		04F170EF1C662E2A0064FC40 /* FKEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F170ED1C662E2A0064FC40 /* FKEventsViewController.m */; };
+		04F170F01C662E2A0064FC40 /* FKEventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F170EE1C662E2A0064FC40 /* FKEventsViewController.xib */; };
+		04F170F61C66304F0064FC40 /* FKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F170F41C66304F0064FC40 /* FKSettingsViewController.m */; };
+		04F170F71C66304F0064FC40 /* FKSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F170F51C66304F0064FC40 /* FKSettingsViewController.xib */; };
+		04F170FB1C66306A0064FC40 /* FKFAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F170F91C66306A0064FC40 /* FKFAQViewController.m */; };
+		04F170FC1C66306A0064FC40 /* FKFAQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F170FA1C66306A0064FC40 /* FKFAQViewController.xib */; };
+		04F170FF1C6662960064FC40 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F170FE1C6662960064FC40 /* UIImage+animatedGIF.m */; };
+		04F171041C6673CB0064FC40 /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F171031C6673CB0064FC40 /* CKCalendarView.m */; };
+		04F171141C667A330064FC40 /* FKEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F171121C667A330064FC40 /* FKEventTableViewCell.m */; };
+		04F171151C667A330064FC40 /* FKEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F171131C667A330064FC40 /* FKEventTableViewCell.xib */; };
+		04F171191C6682350064FC40 /* FKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F171181C6682350064FC40 /* FKEvent.m */; };
 		BB924BE99C12DDC653526E99 /* libPods-Captain Pip's Florida Keys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +134,24 @@
 		04E70FEA1C63D95C00A0685E /* FKOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKOfferViewController.h; sourceTree = "<group>"; };
 		04E70FEB1C63D95C00A0685E /* FKOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKOfferViewController.m; sourceTree = "<group>"; };
 		04E70FEC1C63D95C00A0685E /* FKOfferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKOfferViewController.xib; sourceTree = "<group>"; };
+		04F170EC1C662E2A0064FC40 /* FKEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEventsViewController.h; sourceTree = "<group>"; };
+		04F170ED1C662E2A0064FC40 /* FKEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEventsViewController.m; sourceTree = "<group>"; };
+		04F170EE1C662E2A0064FC40 /* FKEventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKEventsViewController.xib; sourceTree = "<group>"; };
+		04F170F31C66304F0064FC40 /* FKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSettingsViewController.h; sourceTree = "<group>"; };
+		04F170F41C66304F0064FC40 /* FKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSettingsViewController.m; sourceTree = "<group>"; };
+		04F170F51C66304F0064FC40 /* FKSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKSettingsViewController.xib; sourceTree = "<group>"; };
+		04F170F81C66306A0064FC40 /* FKFAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFAQViewController.h; sourceTree = "<group>"; };
+		04F170F91C66306A0064FC40 /* FKFAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFAQViewController.m; sourceTree = "<group>"; };
+		04F170FA1C66306A0064FC40 /* FKFAQViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKFAQViewController.xib; sourceTree = "<group>"; };
+		04F170FD1C6662960064FC40 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		04F170FE1C6662960064FC40 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		04F171021C6673CB0064FC40 /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
+		04F171031C6673CB0064FC40 /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
+		04F171111C667A330064FC40 /* FKEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEventTableViewCell.h; sourceTree = "<group>"; };
+		04F171121C667A330064FC40 /* FKEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEventTableViewCell.m; sourceTree = "<group>"; };
+		04F171131C667A330064FC40 /* FKEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FKEventTableViewCell.xib; sourceTree = "<group>"; };
+		04F171171C6682350064FC40 /* FKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEvent.h; sourceTree = "<group>"; };
+		04F171181C6682350064FC40 /* FKEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEvent.m; sourceTree = "<group>"; };
 		828F1E531EADAAC5B7958806 /* Pods-Captain Pip's Florida Keys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.debug.xcconfig"; sourceTree = "<group>"; };
 		A3733B9E61C7E5BA9549C3B8 /* libPods-Captain Pip's Florida Keys.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Captain Pip's Florida Keys.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D179EF4432E6C7F97A2909 /* Pods-Captain Pip's Florida Keys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain Pip's Florida Keys.release.xcconfig"; path = "Pods/Target Support Files/Pods-Captain Pip's Florida Keys/Pods-Captain Pip's Florida Keys.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +215,9 @@
 		041B61071C5BA76400C6AB78 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04F170F11C662F920064FC40 /* FAQViewController */,
+				04F170F21C662F920064FC40 /* SettingsViewController */,
+				04F170EB1C662E160064FC40 /* EventsViewController */,
 				04E70FE91C63D92E00A0685E /* OfferViewController */,
 				0493078E1C629284007F5BAD /* BaseViewController */,
 				049307881C6283CA007F5BAD /* CouponDetailsViewController */,
@@ -201,6 +233,7 @@
 		041B61091C5BAB8200C6AB78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04F171161C6682240064FC40 /* Event */,
 				0493077F1C613620007F5BAD /* FKRequestManager */,
 				0493077B1C613600007F5BAD /* CouponObject */,
 				04E629161C5CDEAE00CD9C97 /* Categories */,
@@ -270,6 +303,7 @@
 		049307641C60FBE0007F5BAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04F171001C6673CB0064FC40 /* Custom */,
 				0493076A1C60FC1E007F5BAD /* TableViewCell */,
 			);
 			path = View;
@@ -278,6 +312,7 @@
 		0493076A1C60FC1E007F5BAD /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				04F171101C667A330064FC40 /* EventTableViewCell */,
 				0493076B1C60FC1E007F5BAD /* CouponTableViewCell */,
 			);
 			path = TableViewCell;
@@ -339,6 +374,8 @@
 				04E6291B1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m */,
 				049307711C610236007F5BAD /* UIFont+FKFont.h */,
 				049307721C610236007F5BAD /* UIFont+FKFont.m */,
+				04F170FD1C6662960064FC40 /* UIImage+animatedGIF.h */,
+				04F170FE1C6662960064FC40 /* UIImage+animatedGIF.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -396,6 +433,72 @@
 				04E70FEC1C63D95C00A0685E /* FKOfferViewController.xib */,
 			);
 			path = OfferViewController;
+			sourceTree = "<group>";
+		};
+		04F170EB1C662E160064FC40 /* EventsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04F170EC1C662E2A0064FC40 /* FKEventsViewController.h */,
+				04F170ED1C662E2A0064FC40 /* FKEventsViewController.m */,
+				04F170EE1C662E2A0064FC40 /* FKEventsViewController.xib */,
+			);
+			path = EventsViewController;
+			sourceTree = "<group>";
+		};
+		04F170F11C662F920064FC40 /* FAQViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04F170F81C66306A0064FC40 /* FKFAQViewController.h */,
+				04F170F91C66306A0064FC40 /* FKFAQViewController.m */,
+				04F170FA1C66306A0064FC40 /* FKFAQViewController.xib */,
+			);
+			path = FAQViewController;
+			sourceTree = "<group>";
+		};
+		04F170F21C662F920064FC40 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04F170F31C66304F0064FC40 /* FKSettingsViewController.h */,
+				04F170F41C66304F0064FC40 /* FKSettingsViewController.m */,
+				04F170F51C66304F0064FC40 /* FKSettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		04F171001C6673CB0064FC40 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				04F171011C6673CB0064FC40 /* CKCalendarView */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		04F171011C6673CB0064FC40 /* CKCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				04F171021C6673CB0064FC40 /* CKCalendarView.h */,
+				04F171031C6673CB0064FC40 /* CKCalendarView.m */,
+			);
+			path = CKCalendarView;
+			sourceTree = "<group>";
+		};
+		04F171101C667A330064FC40 /* EventTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04F171111C667A330064FC40 /* FKEventTableViewCell.h */,
+				04F171121C667A330064FC40 /* FKEventTableViewCell.m */,
+				04F171131C667A330064FC40 /* FKEventTableViewCell.xib */,
+			);
+			path = EventTableViewCell;
+			sourceTree = "<group>";
+		};
+		04F171161C6682240064FC40 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				04F171171C6682350064FC40 /* FKEvent.h */,
+				04F171181C6682350064FC40 /* FKEvent.m */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		9A3103D02EB8474D8AF5BEC5 /* Frameworks */ = {
@@ -477,6 +580,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F170FC1C66306A0064FC40 /* FKFAQViewController.xib in Resources */,
 				04E70FE41C63D78000A0685E /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				04E6293B1C5E7FEC00CD9C97 /* FKPunchViewController.xib in Resources */,
 				041B60E41C5B9D2700C6AB78 /* LaunchScreen.storyboard in Resources */,
@@ -488,6 +592,7 @@
 				04E70FDC1C63D78000A0685E /* Roboto-Light.ttf in Resources */,
 				04E70FD91C63D78000A0685E /* Roboto-Bold.ttf in Resources */,
 				041B60E11C5B9D2700C6AB78 /* Assets.xcassets in Resources */,
+				04F171151C667A330064FC40 /* FKEventTableViewCell.xib in Resources */,
 				04E70FDA1C63D78000A0685E /* Roboto-BoldItalic.ttf in Resources */,
 				04E70FE11C63D78000A0685E /* Roboto-Thin.ttf in Resources */,
 				04E70FE31C63D78000A0685E /* RobotoCondensed-Bold.ttf in Resources */,
@@ -497,7 +602,9 @@
 				049307701C60FC1E007F5BAD /* FKCouponTableViewCell.xib in Resources */,
 				04E70FD81C63D78000A0685E /* Roboto-BlackItalic.ttf in Resources */,
 				049307771C610568007F5BAD /* FKCouponTableViewController.xib in Resources */,
+				04F170F71C66304F0064FC40 /* FKSettingsViewController.xib in Resources */,
 				04E70FEE1C63D95C00A0685E /* FKOfferViewController.xib in Resources */,
+				04F170F01C662E2A0064FC40 /* FKEventsViewController.xib in Resources */,
 				04E70FE51C63D78000A0685E /* RobotoCondensed-Italic.ttf in Resources */,
 				04E70FD71C63D78000A0685E /* Roboto-Black.ttf in Resources */,
 				04E70FDB1C63D78000A0685E /* Roboto-Italic.ttf in Resources */,
@@ -571,15 +678,22 @@
 				049307911C6292A5007F5BAD /* FKBaseViewController.m in Sources */,
 				04E629191C5CDED000CD9C97 /* NSString+FKString.m in Sources */,
 				049307731C610236007F5BAD /* UIFont+FKFont.m in Sources */,
+				04F171041C6673CB0064FC40 /* CKCalendarView.m in Sources */,
 				044AE0601C5BF2FB00493AFB /* FKCouponViewController.m in Sources */,
 				0493077E1C613600007F5BAD /* FKCouponObject.m in Sources */,
+				04F170EF1C662E2A0064FC40 /* FKEventsViewController.m in Sources */,
 				04E6293A1C5E7FEC00CD9C97 /* FKPunchViewController.m in Sources */,
 				0493078C1C6283CA007F5BAD /* FKCouponDetailsViewController.m in Sources */,
+				04F171141C667A330064FC40 /* FKEventTableViewCell.m in Sources */,
+				04F170FF1C6662960064FC40 /* UIImage+animatedGIF.m in Sources */,
 				04E6291C1C5CF22100CD9C97 /* NSDictionary+FKDictionary.m in Sources */,
 				044AE0571C5BE41400493AFB /* FKLaunchViewController.m in Sources */,
 				041B60D61C5B9D2700C6AB78 /* main.m in Sources */,
+				04F170FB1C66306A0064FC40 /* FKFAQViewController.m in Sources */,
 				041B61111C5BAE4900C6AB78 /* AppDelegate.m in Sources */,
+				04F170F61C66304F0064FC40 /* FKSettingsViewController.m in Sources */,
 				041B61151C5BAEE500C6AB78 /* FKSignInViewController.m in Sources */,
+				04F171191C6682350064FC40 /* FKEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -142,7 +142,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="250-rP-Ah0"/>
                         <constraint firstItem="jIV-0s-LOb" firstAttribute="leading" secondItem="Rxe-QT-IdV" secondAttribute="leading" constant="15" id="6xm-0G-U8I"/>
@@ -200,9 +200,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktj-PN-FVi" userLabel="Notitication Set View">
                     <rect key="frame" x="0.0" y="62" width="320" height="38"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ac-02-x0s">
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wtp-w8-PFn">
                             <rect key="frame" x="251" y="3" width="51" height="31"/>
                             <constraints>
@@ -222,16 +219,13 @@
                                 </mask>
                             </variation>
                         </switch>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OE9-MM-tB5">
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Alert" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-3A-94t">
                             <rect key="frame" x="20" y="2" width="229" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="QOa-KY-uH1"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
@@ -245,7 +239,7 @@
                             </variation>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="wtp-w8-PFn" firstAttribute="centerY" secondItem="pcg-3A-94t" secondAttribute="centerY" id="8Oo-le-BPR"/>
                         <constraint firstAttribute="trailing" secondItem="wtp-w8-PFn" secondAttribute="trailing" constant="10" id="A8M-1q-5IS"/>

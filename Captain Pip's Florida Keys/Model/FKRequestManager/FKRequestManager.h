@@ -30,4 +30,13 @@
 // Get offer
 + (void)requestSpecialOffer:(void(^)(id response))success failure:(void(^)(id failure))failure;
 
+// Get special offer for availability in order to animate OFFER button
++ (void)requestSpecial:(void(^)(id response))success failure:(void(^)(id failure))failure;
+
+// Get police for availability in order to animate EVENTS button
++ (void)requestPolice:(void(^)(id response))success failure:(void(^)(id failure))failure;
+
+// Get events
++ (void)requestEvents:(void(^)(id response))success failure:(void(^)(id failure))failure;
+
 @end

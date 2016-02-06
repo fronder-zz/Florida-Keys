@@ -167,7 +167,7 @@
     FKCouponViewController *couponVC = [[FKCouponViewController alloc] init];
     [couponVC setViewControllers:viewControllers];
     
-    [self.window setRootViewController:couponVC];
+    [self.window setRootViewController:[FKManager navigationControllerWithVC:couponVC]];
 }
 
 

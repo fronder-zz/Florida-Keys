@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FKBaseViewController.h"
 #import "FKCouponObject.h"
 
 @protocol FKTabBarControllerDelegate;
 
-@interface FKCouponViewController : UIViewController
+@interface FKCouponViewController : FKBaseViewController
 
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, weak) UIViewController *selectedViewController;
