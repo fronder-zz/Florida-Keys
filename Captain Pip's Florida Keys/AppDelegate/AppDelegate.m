@@ -13,8 +13,9 @@
 #import "FKCouponTableViewController.h"
 #import "FKPunchViewController.h"
 #import "FKCouponDetailsViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-@interface AppDelegate () <FKTabBarControllerDelegate> {
+@interface AppDelegate () {
     NSString *_deviceTokenStr;
     BOOL _userSigned;
 }
@@ -25,6 +26,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog( @"### running FB sdk version: %@", [FBSDKSettings sdkVersion]);
     [FKRequestManager sharedManager];
     [self addNotificationObservers];
     

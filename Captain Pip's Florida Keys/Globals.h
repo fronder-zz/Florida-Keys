@@ -42,6 +42,7 @@
 #define METHOD_SPECIAL          @"/special"
 #define METHOD_POLICE           @"/police"
 #define METHOD_EVENTS           @"/getevents"
+#define METHOD_PUNCH            @"/punchkey"
 
 // Common
 #ifdef CAPTAIN_PIPS_FLORIDA_KEYS

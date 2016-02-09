@@ -13,6 +13,8 @@
 
 @interface FKEventsViewController () <CKCalendarDelegate>
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopLayout;
+
 @property (weak, nonatomic) IBOutlet CKCalendarView *calendar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -47,7 +49,7 @@
     self.calendar.onlyShowCurrentMonth = NO;
     self.calendar.adaptHeightToNumberOfWeeksInMonth = YES;
     
-    [self.tableView registerClass:[FKEventTableViewCell class] forCellReuseIdentifier:EventCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([FKEventTableViewCell class]) bundle:nil] forCellReuseIdentifier:EventCellIdentifier];
     
     [self getEvents];
 }
@@ -57,7 +59,13 @@
     [super viewWillAppear:animated];
     
     self.title = @"Our Events";
-//    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = NO;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    
 }
 
 
@@ -138,6 +146,14 @@
     }
 }
 
+//- (void)calendar:(CKCalendarView *)calendar didLayoutInRect:(CGRect)frame {
+//    NSLog(@"didlayout frame: %@", NSStringFromCGRect(frame));
+//    CGFloat height = frame.size.height;
+//    if (height > 330) {
+//        self.tableViewTopLayout.constant = 63;
+//    } else
+//        self.tableViewTopLayout.constant = 11;
+//}
 
 
 @end

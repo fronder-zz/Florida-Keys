@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="calendar" destination="bMo-4s-vsU" id="4n4-XN-H3e"/>
                 <outlet property="tableView" destination="sTs-wJ-O3T" id="zVV-ir-IQX"/>
+                <outlet property="tableViewTopLayout" destination="G0u-or-WnB" id="nHw-DI-j1G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,9 +35,9 @@
                         </mask>
                     </variation>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sTs-wJ-O3T">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sTs-wJ-O3T">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ohV-kq-l98"/>
                         <outlet property="delegate" destination="-1" id="eBA-AF-yMv"/>
@@ -47,11 +48,11 @@
             <constraints>
                 <constraint firstItem="bMo-4s-vsU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1fK-RD-zTY"/>
                 <constraint firstItem="sTs-wJ-O3T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3F1-tp-Ixu"/>
-                <constraint firstItem="sTs-wJ-O3T" firstAttribute="top" secondItem="bMo-4s-vsU" secondAttribute="bottom" id="8sM-ut-e2F"/>
-                <constraint firstItem="bMo-4s-vsU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Rn5-bt-lzA"/>
+                <constraint firstItem="sTs-wJ-O3T" firstAttribute="top" secondItem="bMo-4s-vsU" secondAttribute="bottom" constant="63" id="G0u-or-WnB"/>
+                <constraint firstAttribute="bottom" secondItem="sTs-wJ-O3T" secondAttribute="bottom" id="M5H-E3-jO0"/>
+                <constraint firstItem="bMo-4s-vsU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Rn5-bt-lzA"/>
                 <constraint firstAttribute="trailing" secondItem="bMo-4s-vsU" secondAttribute="trailing" id="c85-lJ-T3A"/>
                 <constraint firstAttribute="trailing" secondItem="sTs-wJ-O3T" secondAttribute="trailing" id="fCV-XA-Gzh"/>
-                <constraint firstAttribute="bottom" secondItem="sTs-wJ-O3T" secondAttribute="bottom" id="k8F-Iv-541"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
@@ -63,9 +64,9 @@
                     <exclude reference="Rn5-bt-lzA"/>
                     <exclude reference="c85-lJ-T3A"/>
                     <exclude reference="3F1-tp-Ixu"/>
-                    <exclude reference="8sM-ut-e2F"/>
+                    <exclude reference="G0u-or-WnB"/>
+                    <exclude reference="M5H-E3-jO0"/>
                     <exclude reference="fCV-XA-Gzh"/>
-                    <exclude reference="k8F-Iv-541"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -78,9 +79,9 @@
                     <include reference="Rn5-bt-lzA"/>
                     <include reference="c85-lJ-T3A"/>
                     <include reference="3F1-tp-Ixu"/>
-                    <include reference="8sM-ut-e2F"/>
+                    <include reference="G0u-or-WnB"/>
+                    <include reference="M5H-E3-jO0"/>
                     <include reference="fCV-XA-Gzh"/>
-                    <include reference="k8F-Iv-541"/>
                 </mask>
             </variation>
         </view>

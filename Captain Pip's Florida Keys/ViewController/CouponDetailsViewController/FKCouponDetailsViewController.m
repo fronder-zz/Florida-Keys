@@ -8,6 +8,7 @@
 
 #import "FKCouponDetailsViewController.h"
 #import <MapKit/MapKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 #import "FKCouponViewController.h"
 #import "FKCouponObject.h"
@@ -67,7 +68,16 @@
 }
 
 - (IBAction)facebookButtonClicked:(id)sender {
+    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
+    dialog.mode = FBSDKShareDialogModeShareSheet;
     
+    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+    content.contentTitle = [NSString stringWithFormat:@"%@!", BASE_SHOP_NAME];
+    content.contentDescription = [NSString stringWithFormat:@"DOWNLOAD YOUR FREE %@ APP TODAY and enjoy tons of savings in the #FloridaKeys",BASE_SHOP_NAME];
+    content.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/success.png", API_BASE_URL]];
+    content.contentURL = [NSURL URLWithString:API_BASE_URL];
+    
+    [FBSDKShareDialog showFromViewController:self withContent:content delegate:nil];
 }
 
 

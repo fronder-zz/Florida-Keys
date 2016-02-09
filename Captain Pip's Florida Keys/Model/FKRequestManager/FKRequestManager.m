@@ -86,6 +86,18 @@
     }];
 }
 
++ (void)requestPunch:(void(^)(id response))success failure:(void(^)(id failure))failure {
+    NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_ID];
+    NSAssert(userid, @"There is no USER ID");
+    NSString *URLString =[NSString stringWithFormat:@"%@%@/%@/%@", API_COMMON_URL, METHOD_PUNCH, BASE_SHOP_ID, userid];
+    
+    [[[self class] sharedManager] GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+
 + (void)requestSpecialOffer:(void(^)(id response))success failure:(void(^)(id failure))failure {
     NSString *URLString =[NSString stringWithFormat:@"%@%@/%@", API_COMMON_URL, METHOD_SPECIAL_OFFER, BASE_SHOP_ID];
     

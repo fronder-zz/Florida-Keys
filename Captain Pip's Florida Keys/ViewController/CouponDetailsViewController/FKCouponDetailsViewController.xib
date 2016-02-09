@@ -156,7 +156,8 @@
                                                 <constraint firstAttribute="height" constant="30" id="GUm-fb-M3V"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <state key="normal" title="tes">
+                                            <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal">
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -210,7 +211,9 @@
                                         <constraint firstItem="PJ0-eY-9bU" firstAttribute="centerY" secondItem="HEq-Uj-NZd" secondAttribute="centerY" id="YIs-sc-R6Z"/>
                                         <constraint firstAttribute="height" constant="36" id="bxz-9t-UgN"/>
                                         <constraint firstItem="pvl-KO-lH3" firstAttribute="centerY" secondItem="HEq-Uj-NZd" secondAttribute="centerY" id="fYQ-7Q-Nid"/>
-                                        <constraint firstItem="pvl-KO-lH3" firstAttribute="leading" secondItem="Ybj-FI-rzX" secondAttribute="leading" constant="37" id="ok4-jx-Hw6"/>
+                                        <constraint firstItem="pvl-KO-lH3" firstAttribute="leading" secondItem="Ybj-FI-rzX" secondAttribute="leading" constant="37" id="ok4-jx-Hw6">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                        </constraint>
                                         <constraint firstAttribute="width" constant="300" id="seS-FZ-lHy"/>
                                         <constraint firstItem="HEq-Uj-NZd" firstAttribute="leading" secondItem="Ybj-FI-rzX" secondAttribute="leading" constant="8" id="wos-ZV-D1X"/>
                                     </constraints>
@@ -305,22 +308,22 @@
                                 <mask key="constraints">
                                     <exclude reference="PDE-Ll-9AA"/>
                                     <exclude reference="raH-FS-jy3"/>
-                                    <exclude reference="9R3-6i-mpf"/>
-                                    <exclude reference="MJd-4r-HK9"/>
-                                    <exclude reference="bhk-sd-J5w"/>
-                                    <exclude reference="KiD-8J-jAN"/>
-                                    <exclude reference="kcP-na-Tvy"/>
-                                    <exclude reference="DeH-0o-Uja"/>
-                                    <exclude reference="sUo-Xx-iFa"/>
-                                    <exclude reference="83z-7x-1Zq"/>
-                                    <exclude reference="Iti-Iy-pVf"/>
-                                    <exclude reference="W4d-5f-dbM"/>
                                     <exclude reference="821-sN-asL"/>
                                     <exclude reference="wVr-NM-xrt"/>
                                     <exclude reference="zUA-xP-D4X"/>
+                                    <exclude reference="9R3-6i-mpf"/>
+                                    <exclude reference="MJd-4r-HK9"/>
+                                    <exclude reference="bhk-sd-J5w"/>
+                                    <exclude reference="83z-7x-1Zq"/>
+                                    <exclude reference="Iti-Iy-pVf"/>
+                                    <exclude reference="W4d-5f-dbM"/>
+                                    <exclude reference="DeH-0o-Uja"/>
+                                    <exclude reference="sUo-Xx-iFa"/>
                                     <exclude reference="JDZ-3x-uri"/>
                                     <exclude reference="bTB-s6-paW"/>
                                     <exclude reference="gkk-Bd-EoS"/>
+                                    <exclude reference="KiD-8J-jAN"/>
+                                    <exclude reference="kcP-na-Tvy"/>
                                 </mask>
                             </variation>
                             <variation key="widthClass=compact">
@@ -336,22 +339,22 @@
                                 <mask key="constraints">
                                     <include reference="PDE-Ll-9AA"/>
                                     <include reference="raH-FS-jy3"/>
-                                    <include reference="9R3-6i-mpf"/>
-                                    <include reference="MJd-4r-HK9"/>
-                                    <include reference="bhk-sd-J5w"/>
-                                    <include reference="KiD-8J-jAN"/>
-                                    <include reference="kcP-na-Tvy"/>
-                                    <include reference="DeH-0o-Uja"/>
-                                    <include reference="sUo-Xx-iFa"/>
-                                    <include reference="83z-7x-1Zq"/>
-                                    <include reference="Iti-Iy-pVf"/>
-                                    <include reference="W4d-5f-dbM"/>
                                     <include reference="821-sN-asL"/>
                                     <include reference="wVr-NM-xrt"/>
                                     <include reference="zUA-xP-D4X"/>
+                                    <include reference="9R3-6i-mpf"/>
+                                    <include reference="MJd-4r-HK9"/>
+                                    <include reference="bhk-sd-J5w"/>
+                                    <include reference="83z-7x-1Zq"/>
+                                    <include reference="Iti-Iy-pVf"/>
+                                    <include reference="W4d-5f-dbM"/>
+                                    <include reference="DeH-0o-Uja"/>
+                                    <include reference="sUo-Xx-iFa"/>
                                     <include reference="JDZ-3x-uri"/>
                                     <include reference="bTB-s6-paW"/>
                                     <include reference="gkk-Bd-EoS"/>
+                                    <include reference="KiD-8J-jAN"/>
+                                    <include reference="kcP-na-Tvy"/>
                                 </mask>
                             </variation>
                         </view>
@@ -428,7 +431,7 @@
                     <include reference="kI8-gh-kpJ"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="492" y="321.5"/>
+            <point key="canvasLocation" x="492" y="321"/>
         </view>
     </objects>
     <resources>

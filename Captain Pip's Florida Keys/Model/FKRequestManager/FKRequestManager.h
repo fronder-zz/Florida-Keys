@@ -15,7 +15,7 @@
 // Method for obtaining shop details
 + (void)requestShopDetails:(void(^)(id response))success failure:(void(^)(id failure))failure;
 
-// 
+
 + (void)requestCheckDeviceWithURLString:(NSString *)URLString withBlock:(void(^)(id response))success failure:(void(^)(id failure))failure;
 
 // Method for registering user to the server
@@ -26,6 +26,9 @@
 
 // Get available shops data
 + (void)requestAvailableShops:(void(^)(id response))success failure:(void(^)(id failure))failure;
+
+// Get punch
++ (void)requestPunch:(void(^)(id response))success failure:(void(^)(id failure))failure;
 
 // Get offer
 + (void)requestSpecialOffer:(void(^)(id response))success failure:(void(^)(id failure))failure;

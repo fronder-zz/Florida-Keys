@@ -12,9 +12,12 @@
 #import "FKPunchViewController.h"
 #import "AppDelegate.h"
 
+#define kLayoutMargin 80
+
 @interface FKSignInViewController () <FKTabBarControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayout2;
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 @property (weak, nonatomic) IBOutlet UITextField *emailTF;
@@ -133,7 +136,8 @@
 - (void)keyboardWillShow {
     if (self.topLayout.constant > 0) {
         [UIView animateWithDuration:3.0 animations:^{
-            self.topLayout.constant -= 80;
+            self.topLayout.constant -= kLayoutMargin;
+            self.topLayout2.constant -= kLayoutMargin;
         }];
     }
 }
@@ -141,7 +145,8 @@
 - (void)keyboardWillHide {
     if (self.topLayout.constant < 0) {
         [UIView animateWithDuration:3.0 animations:^{
-            self.topLayout.constant += 80;
+            self.topLayout.constant += kLayoutMargin;
+            self.topLayout2.constant += kLayoutMargin;
         }];
     }
 }
